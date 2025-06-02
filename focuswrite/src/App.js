@@ -251,42 +251,52 @@ function App() {
           <div
             className="sidebar-pomodoro"
             style={{
-              width: 48,
+              width: 56,
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
-              marginBottom: 12
+              marginBottom: 12,
+              background: pomodoroMode === "break" ? "#8FBCBB24" : "#A3BE8C18",
+              border: (pomodoroStatus === "focus" || pomodoroStatus === "break") ? '2px solid #A3BE8C' : undefined
             }}
           >
             <span style={{
-              fontSize: 17,
-              color: pomodoroStatus === "break" ? "#8FBCBB" : "#A3BE8C",
+              fontSize: 18,
+              color: pomodoroMode === "break" ? "#8FBCBB" : "#A3BE8C",
               marginBottom: 4
             }}>
               <span role="img" aria-label="Pomodoro">⏲️</span>
             </span>
             <div style={{
               fontSize: 13,
-              color: "#fff",
-            }}>{pomodoroStatus === "break" ? "Break" : pomodoroStatus === "running" ? "Focus" : "Idle"}</div>
-            <div style={{
-              fontSize: 15,
-              marginTop: 2,
-              color: "#A3BE8C",
+              color: pomodoroMode === "break" ? "#8FBCBB" : "#A3BE8C",
               fontWeight: 600,
+              marginBottom: 1
+            }}>
+              {pomodoroMode === "break" ? "Break" : pomodoroMode === "focus" ? "Focus" : "Idle"}
+            </div>
+            <div style={{
+              fontSize: 19,
+              marginTop: 0,
+              color: pomodoroMode === "break" ? "#8FBCBB" : "#A3BE8C",
+              fontWeight: 700,
+              letterSpacing: "0.03em"
             }}>{formatTime(timer)}</div>
-            <div style={{ display: 'flex', gap: 2, marginTop: 6 }}>
-              {pomodoroStatus !== 'running' && (
-                <button className="btn" title="Start Pomodoro" style={{ padding: 3, fontSize: 15, width: 28, height: 28, borderRadius: 6 }} onClick={handleStartPomodoro}>
+            <div style={{ display: 'flex', gap: 2, marginTop: 8 }}>
+              {(pomodoroStatus === "idle" || pomodoroStatus === "paused") && (
+                <button className="btn" title="Start" style={{ padding: 3, fontSize: 15, width: 28, height: 28, borderRadius: 6 }} onClick={handleStartPomodoro}>
                   ▶️
                 </button>
               )}
-              {pomodoroStatus === 'running' && (
-                <button className="btn" title="Stop" style={{ padding: 3, fontSize: 14, width: 28, height: 28, borderRadius: 6, background: "#CE5454" }} onClick={handleStopPomodoro}>
-                  ⏹
+              {(pomodoroStatus === "focus" || pomodoroStatus === "break") && (
+                <button className="btn" title="Pause" style={{ padding: 3, fontSize: 14, width: 28, height: 28, borderRadius: 6, background: "#B48EAD", color: "#fff" }} onClick={handlePausePomodoro}>
+                  ⏸
                 </button>
               )}
-              <button className="btn" title="Break" style={{ padding: 3, fontSize: 14, width: 28, height: 28, borderRadius: 6, background: "#8FBCBB" }} onClick={handleBreakPomodoro}>
+              <button className="btn" title="Reset" style={{ padding: 3, fontSize: 13, width: 28, height: 28, borderRadius: 6, background: "#CE5454", color: "#fff" }} onClick={handleResetPomodoro}>
+                ⏹
+              </button>
+              <button className="btn" title="Break" style={{ padding: 3, fontSize: 13, width: 28, height: 28, borderRadius: 6, background: "#8FBCBB", color: "#232634" }} onClick={handleBreakPomodoro}>
                 ☕
               </button>
             </div>
@@ -430,11 +440,23 @@ function App() {
             </div>
             {/* Pomodoro Timer */}
             <div style={{
-              color: pomodoroStatus === "break" ? "#8FBCBB" : "#B48EAD",
+              color: pomodoroMode === "break" ? "#8FBCBB" : "#B48EAD",
               fontSize: 15,
-              minWidth: 87
+              minWidth: 87,
+              fontWeight: 600
             }}>
-              <span role="img" aria-label="Timer">⏰</span> {formatTime(timer)}
+              <span role="img" aria-label="Timer">⏰</span> {formatTime(timer)}{" "}
+              <span style={{
+                fontSize: "0.89em",
+                marginLeft: 4,
+                color: pomodoroMode === "break" ? "#8FBCBB" : "#A3BE8C"
+              }}>
+                {pomodoroMode === "break"
+                  ? "Break"
+                  : pomodoroMode === "focus"
+                    ? "Focus"
+                    : "Idle"}
+              </span>
             </div>
             {/* Goal Display */}
             <div style={{
@@ -472,11 +494,11 @@ function App() {
               Pomodoro
             </div>
             <div style={{ color: "#fff", fontSize: "1.09rem" }}>
-              {pomodoroStatus === 'idle'
-                ? "Ready to focus"
-                : pomodoroStatus === 'running'
-                  ? "Session in progress"
-                  : "On break"}
+              {pomodoroMode === 'focus' && pomodoroStatus !== 'idle'
+                ? pomodoroStatus === 'paused' ? "Session paused" : "Session in progress"
+                : pomodoroMode === 'break'
+                  ? (pomodoroStatus === 'paused' ? "Break paused" : "On break")
+                  : "Ready to focus"}
             </div>
           </div>
           <div>
