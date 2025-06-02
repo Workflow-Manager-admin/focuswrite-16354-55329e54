@@ -227,9 +227,37 @@ function App() {
               <span className="analytics-count">{wordCount}</span>
               <span className="analytics-label"> words</span>
             </div>
-            <button className={printMode ? "btn btn-active" : "btn"} onClick={togglePrintMode}>
-              <span role="img" aria-label="Print">🖨️</span> Print Mode
-            </button>
+            {/* Print & Export Controls */}
+            <div className="print-controls" style={{ display: 'flex', gap: 7 }}>
+              <button
+                className={printMode ? "btn btn-active" : "btn"}
+                onClick={togglePrintMode}
+                aria-label={printMode ? "Exit Print Layout" : "Enter Print Layout"}
+                title={printMode ? "Return to edit mode" : "Show clean print preview (no sidebars/controls)"}
+                style={{ minWidth: 90 }}
+              >
+                <span role="img" aria-label="Print">🖨️</span> {printMode ? "Exit Print" : "Print Layout"}
+              </button>
+              <button
+                className="btn"
+                onClick={() => {
+                  window.print();
+                }}
+                aria-label="Print or Export"
+                title="Export or print your writing as a clean document"
+                style={{
+                  backgroundColor: "#fff",
+                  color: "#232634",
+                  border: "1.5px solid #A3BE8C",
+                  fontWeight: 500,
+                  minWidth: 80,
+                  marginLeft: 0
+                }}
+                disabled={writing.trim() === ""}
+              >
+                <span role="img" aria-label="Print/Export">📄</span> Export
+              </button>
+            </div>
           </div>
         </div>
       </nav>
