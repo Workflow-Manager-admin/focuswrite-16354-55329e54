@@ -34,16 +34,12 @@ function App() {
   // Print mode
   const [printMode, setPrintMode] = useState(false);
 
-  // Real static sound URLs from public folder
+  // Only use local static waterfall sound URL
   function getWaterfallURL() {
-    const localUrl = process.env.PUBLIC_URL
+    return process.env.PUBLIC_URL
       ? process.env.PUBLIC_URL + "/soundscapes/waterfall.mp3"
       : "/soundscapes/waterfall.mp3";
-    // fallback handled on error at playback
-    return localUrl;
   }
-  // Fallback URL for public domain waterfall (CC0)
-  const fallbackWaterfallURL = "https://cdn.pixabay.com/audio/2022/03/15/audio_115b9a05f4.mp3";
 
   const sounds = {
     rain: {
@@ -88,7 +84,7 @@ function App() {
     }
 
     let srcUrl = sounds[soundKey].url;
-    // Special logic for Waterfall: prefer uploaded, then local, then fallback
+    // For Waterfall, prefer uploaded, then local; no more remote fallback
     let useUploaded = false;
     if (soundKey === "waterfall") {
       if (uploadedWaterfall) {
@@ -97,7 +93,7 @@ function App() {
       }
     }
 
-    const playSound = (url, forWaterfallFallback = false) => {
+    const playSound = (url) => {
       const h = new Howl({
         src: [url],
         volume,
@@ -106,16 +102,8 @@ function App() {
         onend: () => setIsPlaying(false),
         onloaderror: (id, err) => {
           if (soundKey === "waterfall") {
-            if (!forWaterfallFallback && !useUploaded) {
-              // Try fallback remote file
-              setWaterfallLoadError(true); // UI error
-              playSound(fallbackWaterfallURL, true);
-            } else if (!forWaterfallFallback && useUploaded) {
-              setWaterfallLoadError(true); // upload error UI
-            } else {
-              // Fallback failed too, force upload UI
-              setWaterfallLoadError(true);
-            }
+            // File missing or invalid: show a clear message
+            setWaterfallLoadError(true);
           }
         },
         onplay: () => {
