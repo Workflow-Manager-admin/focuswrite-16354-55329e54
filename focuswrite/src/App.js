@@ -12,7 +12,7 @@ import { Howl } from 'howler';
  */
 function App() {
   // Soundscape setup
-  const [currentSound, setCurrentSound] = useState(null); // "rain", "forest"
+  const [currentSound, setCurrentSound] = useState(null); // "rain", "forest", "waterfall"
   const [isPlaying, setIsPlaying] = useState(false);
   const [volume, setVolume] = useState(0.4);
 
@@ -26,7 +26,6 @@ function App() {
   const goal = 500;
 
   // Pomodoro timer state and logic
-  // 'focus': focus session; 'break': break session; 'paused': paused timer; 'idle': not started
   const [pomodoroStatus, setPomodoroStatus] = useState('idle'); // 'focus' | 'break' | 'paused' | 'idle'
   const [timer, setTimer] = useState(25 * 60); // seconds left
   const [pomodoroMode, setPomodoroMode] = useState('focus'); // distinguishes between focus and break visually
@@ -36,17 +35,11 @@ function App() {
   const [printMode, setPrintMode] = useState(false);
 
   // Real static sound URLs from public folder
-  // Audio files must be placed at "focuswrite/public/soundscapes/<file>.mp3"
-  //
-  // Waterfall placeholder is public domain: https://cdn.pixabay.com/audio/2022/03/15/audio_115b9a05f4.mp3
-  // (Pixabay "small waterfall" - CC0)
-  // Resolve local or fallback audio for Waterfall
   function getWaterfallURL() {
-    // Try to use local file; if it doesn't exist, fallback to a public CC0 waterfall MP3
     const localUrl = process.env.PUBLIC_URL
       ? process.env.PUBLIC_URL + "/soundscapes/waterfall.mp3"
       : "/soundscapes/waterfall.mp3";
-    // As direct public assets cannot be detected statically, we'll optimistically try local, but handle error at playback
+    // fallback handled on error at playback
     return localUrl;
   }
   // Fallback URL for public domain waterfall (CC0)
@@ -68,7 +61,6 @@ function App() {
     waterfall: {
       label: "Waterfall",
       url: getWaterfallURL(),
-      // Extra: used for fallback or upload prompt
     },
   };
 
@@ -81,9 +73,19 @@ function App() {
   const [howlObj, setHowlObj] = useState(null);
 
   // Soundscape handlers (Rain, Forest, and Waterfall)
+  // PUBLIC_INTERFACE
   const handlePlaySound = (soundKey) => {
-    // If a sound is already playing, stop it
-    if (howlObj) howlObj.stop();
+    // If the same soundscape is "active", just resume if paused; otherwise switch
+    if (currentSound === soundKey && howlObj && !isPlaying) {
+      howlObj.play();
+      setIsPlaying(true);
+      return;
+    }
+    // Stop any currently playing soundscape
+    if (howlObj) {
+      howlObj.stop();
+      setHowlObj(null);
+    }
 
     let srcUrl = sounds[soundKey].url;
     // Special logic for Waterfall: prefer uploaded, then local, then fallback
@@ -95,10 +97,7 @@ function App() {
       }
     }
 
-    let sound;
-    let errored = false;
-
-    const playSound = (url, forWaterfallFallback=false) => {
+    const playSound = (url, forWaterfallFallback = false) => {
       const h = new Howl({
         src: [url],
         volume,
@@ -109,16 +108,25 @@ function App() {
           if (soundKey === "waterfall") {
             if (!forWaterfallFallback && !useUploaded) {
               // Try fallback remote file
-              setWaterfallLoadError(true); // also for UI
+              setWaterfallLoadError(true); // UI error
               playSound(fallbackWaterfallURL, true);
             } else if (!forWaterfallFallback && useUploaded) {
-              setWaterfallLoadError(true); // show upload error UI
+              setWaterfallLoadError(true); // upload error UI
             } else {
               // Fallback failed too, force upload UI
               setWaterfallLoadError(true);
             }
           }
         },
+        onplay: () => {
+          setIsPlaying(true);
+          setCurrentSound(soundKey);
+        },
+        onstop: () => {
+          setIsPlaying(false);
+          setCurrentSound(null);
+        },
+        onpause: () => setIsPlaying(false),
         onplayerror: function () {
           h.once('unlock', function () {
             h.play();
@@ -134,6 +142,8 @@ function App() {
 
     playSound(srcUrl);
   };
+
+  // PUBLIC_INTERFACE
   const handleToggleSound = () => {
     if (!howlObj) return;
     if (isPlaying) {
@@ -144,6 +154,8 @@ function App() {
       setIsPlaying(true);
     }
   };
+
+  // PUBLIC_INTERFACE
   const handleStopSound = () => {
     if (howlObj) {
       howlObj.stop();
@@ -152,6 +164,8 @@ function App() {
       setIsPlaying(false);
     }
   };
+
+  // PUBLIC_INTERFACE
   const handleChangeVolume = e => {
     const v = parseFloat(e.target.value);
     setVolume(v);
@@ -161,11 +175,9 @@ function App() {
   };
 
   // Writing area contentEditable handlers
-  // Handle input for live word count
   const handleWritingInput = (e) => {
     setWriting(e.target.innerText);
   };
-  // Handle focus for subtle highlight
   const handleWritingFocus = () => setFocused(true);
   const handleWritingBlur = () => setFocused(false);
 
@@ -177,7 +189,6 @@ function App() {
   const BREAK_LENGTH = 5 * 60;
 
   // PUBLIC_INTERFACE
-  // Start or resume pomodoro timer
   const handleStartPomodoro = () => {
     // If resuming from pause, don't reset timer
     if (pomodoroStatus === 'paused') {
@@ -193,13 +204,11 @@ function App() {
   };
 
   // PUBLIC_INTERFACE
-  // Pause the timer
   const handlePausePomodoro = () => {
     setPomodoroStatus('paused');
   };
 
   // PUBLIC_INTERFACE
-  // Reset the timer to initial state
   const handleResetPomodoro = () => {
     setPomodoroStatus('idle');
     setPomodoroMode('focus');
@@ -211,7 +220,6 @@ function App() {
   };
 
   // PUBLIC_INTERFACE
-  // Switch to break mode manually
   const handleBreakPomodoro = () => {
     setTimer(BREAK_LENGTH);
     setPomodoroMode('break');
@@ -226,7 +234,6 @@ function App() {
   useEffect(() => {
     if (pomodoroStatus === 'focus' || pomodoroStatus === 'break') {
       if (intervalId) clearInterval(intervalId);
-      // Only create interval if timer > 0
       if (timer > 0) {
         const id = setInterval(() => {
           setTimer(prev => {
@@ -255,7 +262,7 @@ function App() {
         setIntervalId(null);
       }
     }
-    // Cleanup interval when component unmounts
+    // Cleanup interval on unmount
     return () => {
       if (intervalId) clearInterval(intervalId);
     };
@@ -274,6 +281,17 @@ function App() {
     return () => {
       if (uploadedWaterfall) {
         URL.revokeObjectURL(uploadedWaterfall);
+      }
+    };
+    // eslint-disable-next-line
+  }, []);
+
+  // Cleanup Howl on unmount
+  useEffect(() => {
+    return () => {
+      if (howlObj) {
+        howlObj.stop();
+        setHowlObj(null);
       }
     };
     // eslint-disable-next-line
@@ -349,7 +367,7 @@ function App() {
           paddingTop: 36,
           gap: 24,
           minHeight: "100%",
-        }}>
+        }} aria-label="Sidebar">
           {/* Pomodoro Timer Shell */}
           <div
             className="sidebar-pomodoro"
@@ -362,6 +380,7 @@ function App() {
               background: pomodoroMode === "break" ? "#8FBCBB24" : "#A3BE8C18",
               border: (pomodoroStatus === "focus" || pomodoroStatus === "break") ? '2px solid #A3BE8C' : undefined
             }}
+            aria-label={`Pomodoro status: ${pomodoroMode === 'break' ? 'Break' : pomodoroMode}`}
           >
             <span style={{
               fontSize: 18,
@@ -405,132 +424,203 @@ function App() {
             </div>
           </div>
           {/* Soundscape Section */}
-          <div style={{
-            width: "100%",
-            minWidth: 170,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            gap: 16,
-            margin: "0 0 8px 0"
-          }}>
-            <span style={{ fontSize: 23, color: "#A3BE8C", marginBottom: 8 }}>
+          <div
+            style={{
+              width: "100%",
+              minWidth: 170,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: 18,
+              margin: "0 0 8px 0"
+            }}
+            aria-label="Ambient soundscape controls"
+          >
+            <span style={{ fontSize: 25, color: "#A3BE8C", marginBottom: 8 }}>
               <span role="img" aria-label="Soundscape">🎵</span>
             </span>
-            {/* Expanded, large labeled soundscape buttons: Rain, Forest, Waterfall */}
-            <div style={{ display: "flex", flexDirection: "column", gap: 10, width: "100%" }}>
-              {Object.keys(sounds).map(skey => (
-                <React.Fragment key={skey}>
-                <button
-                  className="btn btn-large"
-                  title={sounds[skey].label}
-                  style={{
-                    backgroundColor: (currentSound === skey && isPlaying) ? "#A3BE8C" : "#313944",
-                    color: (currentSound === skey && isPlaying) ? "#232634" : "#fff",
-                    width: 158,
-                    height: 48,
-                    fontSize: "1.14rem",
-                    borderRadius: 9,
-                    border: currentSound === skey ? "2.3px solid #A3BE8C" : "1.2px solid #444",
-                    fontWeight: 600,
-                    letterSpacing: 0.2,
-                    boxShadow: (currentSound === skey && isPlaying) ? "0 2px 8px #A3BE8C22" : "0 1px 5px #1318242e",
-                    margin: "0 auto",
-                    transition: "background 0.18s, box-shadow 0.19s"
-                  }}
-                  onClick={() => handlePlaySound(skey)}
-                  aria-label={sounds[skey].label}
-                >
-                  {sounds[skey].label}
-                  {/* Add icon for Waterfall */}
-                  {skey === "waterfall" && (
-                    <span role="img" aria-label="Waterfall" style={{ marginLeft: 8, fontSize: 21 }}>💧</span>
-                  )}
-                  {currentSound === skey && isPlaying && (
-                    <span style={{marginLeft: 11, fontSize: 19}} role="img" aria-label="playing">🔊</span>
-                  )}
-                </button>
-                {/* If Waterfall errored, provide upload/fallback prompt below button */}
-                {skey === "waterfall" && waterfallLoadError && (
-                  <div style={{margin: "6px 0 8px 0", color: "#ffcc99", fontSize: 15, lineHeight: 1.2, textAlign: "center", background: "#1E2130", borderRadius: 7, padding: "8px 4px"}}>
-                    Could not play Waterfall sound from local or fallback source.<br />
-                    <label htmlFor="waterfall-upload" style={{ display: "block", fontWeight: 600, cursor: "pointer", margin: "7px 0" }}>
-                      Upload your own waterfall sound (MP3):
-                      <input
-                        ref={waterfallInputRef}
-                        id="waterfall-upload"
-                        type="file"
-                        accept="audio/mp3,audio/mpeg"
-                        style={{ display: "block", margin: "4px auto" }}
-                        onChange={e => {
-                          if (e.target.files && e.target.files[0]) {
-                            const file = e.target.files[0];
-                            const url = URL.createObjectURL(file);
-                            setUploadedWaterfall(url);
-                            setWaterfallLoadError(false);
-                            // Auto-play after upload
-                            setTimeout(() => handlePlaySound("waterfall"), 250);
-                          }
+            {/* Visually polished, accessible large soundscape buttons */}
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: 14,
+                width: "100%"
+              }}
+              role="group"
+              aria-label="Soundscape choices"
+            >
+              {Object.keys(sounds).map(skey => {
+                const isActive = (currentSound === skey && isPlaying);
+                return (
+                  <React.Fragment key={skey}>
+                    <button
+                      className={`btn btn-large${isActive ? " btn-active" : ""}`}
+                      title={sounds[skey].label}
+                      aria-pressed={isActive}
+                      aria-label={sounds[skey].label + (isActive ? " (active)" : "")}
+                      style={{
+                        backgroundColor: isActive ? "#A3BE8C" : "#29313f",
+                        color: isActive ? "#232634" : "#fff",
+                        width: 174,
+                        height: 54,
+                        fontSize: "1.212rem",
+                        borderRadius: 12,
+                        border: isActive ? "2.5px solid #A3BE8C" : "1.2px solid #394154",
+                        fontWeight: 700,
+                        letterSpacing: 0.22,
+                        boxShadow: isActive ? "0 2.5px 12px #A3BE8C26" : "0 1px 5px #13182433",
+                        margin: "0 auto",
+                        outline: isActive ? "3px solid #B7E9C4" : undefined,
+                        outlineOffset: isActive ? "2px" : undefined,
+                        transition: "background 0.18s, box-shadow 0.21s"
+                      }}
+                      onClick={() => handlePlaySound(skey)}
+                      tabIndex={0}
+                    >
+                      {skey === "rain" && <span role="img" aria-label="Rain" style={{ marginRight: 8, fontSize: 23 }}>🌧️</span>}
+                      {skey === "forest" && <span role="img" aria-label="Forest" style={{ marginRight: 8, fontSize: 23 }}>🌲</span>}
+                      {skey === "waterfall" && <span role="img" aria-label="Waterfall" style={{ marginRight: 8, fontSize: 23 }}>💧</span>}
+                      {sounds[skey].label}
+                      {isActive && (
+                        <span style={{ marginLeft: 10, fontSize: 21, verticalAlign: "middle" }} role="img" aria-label="playing">🔊</span>
+                      )}
+                    </button>
+                    {/* If Waterfall errored, provide upload/fallback prompt below button */}
+                    {skey === "waterfall" && waterfallLoadError && (
+                      <section
+                        style={{
+                          margin: "7px 0 9px 0",
+                          color: "#FFD69B",
+                          fontSize: 15.2,
+                          lineHeight: 1.25,
+                          textAlign: "center",
+                          background: "#19202C",
+                          borderRadius: 8,
+                          padding: "10px 6px"
                         }}
-                      />
-                    </label>
-                    <span style={{ fontSize: 13, color: "#e7e787" }}>
-                      Or, <a href={fallbackWaterfallURL} target="_blank" rel="noopener noreferrer" style={{ color: "#E8B88B" }}>try this public Waterfall MP3</a>
-                    </span>
-                  </div>
-                )}
-                </React.Fragment>
-              ))}
+                        aria-live="polite"
+                        aria-atomic="true"
+                      >
+                        Could not play Waterfall sound from local or fallback source.<br />
+                        <label
+                          htmlFor="waterfall-upload"
+                          style={{
+                            display: "block",
+                            fontWeight: 600,
+                            cursor: "pointer",
+                            margin: "7px 0"
+                          }}
+                        >
+                          Upload your own waterfall sound (MP3):
+                          <input
+                            ref={waterfallInputRef}
+                            id="waterfall-upload"
+                            type="file"
+                            accept="audio/mp3,audio/mpeg"
+                            style={{ display: "block", margin: "4px auto" }}
+                            onChange={e => {
+                              if (e.target.files && e.target.files[0]) {
+                                const file = e.target.files[0];
+                                const url = URL.createObjectURL(file);
+                                setUploadedWaterfall(url);
+                                setWaterfallLoadError(false);
+                                // Auto-play after upload
+                                setTimeout(() => handlePlaySound("waterfall"), 250);
+                              }
+                            }}
+                          />
+                        </label>
+                        <span style={{ fontSize: 13.3, color: "#E8B88B" }}>
+                          Or, <a href={fallbackWaterfallURL} target="_blank" rel="noopener noreferrer" style={{ color: "#ffedc0" }}>try this public Waterfall MP3</a>
+                        </span>
+                      </section>
+                    )}
+                  </React.Fragment>
+                );
+              })}
             </div>
-            <div style={{ marginTop: 8, display: "flex", gap: 12, flexDirection: "row", alignItems: "center" }}>
+            {/* Playback controls: Pause/Resume/Stop with ARIA */}
+            <div
+              style={{
+                marginTop: 10,
+                display: "flex",
+                gap: 14,
+                flexDirection: "row",
+                alignItems: "center"
+              }}
+              aria-label="Soundscape playback controls"
+            >
               <button
                 className="btn"
-                aria-label={isPlaying ? "Pause" : "Play"}
+                aria-label={isPlaying ? "Pause soundscape" : "Play soundscape"}
+                aria-disabled={!currentSound}
                 style={{
                   background: "#232634",
-                  borderRadius: 15,
-                  fontSize: 19,
+                  borderRadius: 17,
+                  fontSize: 21,
                   color: "#A3BE8C",
-                  width: 34,
-                  height: 34,
-                  padding: 5,
-                  border: "1.5px solid #3c4554"
+                  width: 39,
+                  height: 39,
+                  padding: 6,
+                  border: "1.7px solid #314050"
                 }}
                 onClick={handleToggleSound}
                 disabled={!currentSound}
+                tabIndex={0}
               >
                 {isPlaying ? "⏸" : "▶️"}
               </button>
               <button
                 className="btn"
-                aria-label="Stop"
+                aria-label="Stop soundscape"
+                aria-disabled={!currentSound}
                 style={{
                   background: "#232634",
-                  borderRadius: 15,
-                  fontSize: 15,
+                  borderRadius: 17,
+                  fontSize: 17,
                   color: "#A3BE8C",
-                  width: 34,
-                  height: 34,
-                  padding: 5,
-                  border: "1.5px solid #3c4554"
+                  width: 39,
+                  height: 39,
+                  padding: 6,
+                  border: "1.7px solid #314050"
                 }}
                 onClick={handleStopSound}
                 disabled={!currentSound}
+                tabIndex={0}
               >
                 ⏹
               </button>
             </div>
-            <div style={{ width: 118, marginTop: 8, alignSelf: "center", display: "flex", flexDirection: "row", alignItems: "center", gap: 8 }}>
-              <span role="img" aria-label="Volume down" style={{ fontSize: 18, color: "#A3BE8C" }}>🔈</span>
+            {/* Shared volume slider, with ARIA */}
+            <div
+              style={{
+                width: 130,
+                marginTop: 11,
+                alignSelf: "center",
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+                gap: 10
+              }}
+            >
+              <span role="img" aria-label="Volume down" style={{ fontSize: 19, color: "#A3BE8C" }}>🔈</span>
               <input
                 type="range"
                 min={0}
                 max={1}
                 step={0.01}
                 value={volume}
-                style={{ accentColor: "#A3BE8C", width: 80, verticalAlign: "middle" }}
+                style={{
+                  accentColor: "#A3BE8C",
+                  width: 85,
+                  verticalAlign: "middle",
+                  background: "#222",
+                  borderRadius: 2
+                }}
                 onChange={handleChangeVolume}
-                aria-label="Soundscape Volume"
+                aria-label={`Soundscape volume (${Math.round(volume * 100)}%)`}
+                tabIndex={0}
               />
             </div>
           </div>
