@@ -630,21 +630,49 @@ function App() {
               lineHeight: 1.7,
               marginBottom: 18,
               outline: printMode ? "none" : (focused ? "2.5px solid #A3BE8C" : "2px solid #313944"),
-              transition: "outline-color 0.2s"
+              transition: "outline-color 0.2s",
+              resize: !printMode ? "vertical" : "none",
+              overflowY: "auto",
+              fontFamily: "inherit",
+              wordBreak: "break-word",
+              WebkitUserSelect: "text",
+              MozUserSelect: "text",
+              msUserSelect: "text",
+              userSelect: "text",
             }}
             contentEditable={!printMode}
             suppressContentEditableWarning={true}
             spellCheck={true}
             aria-label="SerenityWrite main writing area"
+            aria-multiline="true"
             tabIndex={0}
             onInput={handleWritingInput}
             onFocus={handleWritingFocus}
             onBlur={handleWritingBlur}
+            onPaste={e => {
+              e.preventDefault();
+              // Strip HTML formatting and paste as plain text only!
+              const text = e.clipboardData.getData('text/plain');
+              document.execCommand('insertText', false, text);
+            }}
+            onDrop={e => {
+              // Prevent dropping files/images
+              if (e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files.length > 0) {
+                e.preventDefault();
+                return false;
+              }
+              return true;
+            }}
             role="textbox"
+            aria-live="polite"
+            aria-autocomplete="none"
           >
             {writing.length === 0 && !printMode && (
-              <span style={{ opacity: 0.36, fontStyle: "italic", userSelect: "none" }}>[ Start writing here... ]</span>
+              <span style={{ opacity: 0.36, fontStyle: "italic", userSelect: "none", pointerEvents: "none" }}>
+                [ Start writing here... ]
+              </span>
             )}
+            {/* Only display the value as plain text nodes */}
             {writing.length > 0 && writing}
           </div>
           {/* Session Analytics and Pomodoro */}

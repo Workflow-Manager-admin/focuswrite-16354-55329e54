@@ -178,7 +178,53 @@ body {
 
 [contenteditable][role="textbox"] {
   min-height: 5em;
+  box-sizing: border-box;
+  max-width: 720px;
+  width: 100%;
+  padding: 40px 32px;
+  font-size: 1.25rem;
+  line-height: 1.7;
+  font-family: inherit;
+  background: #262b36;
+  color: #fff;
+  border-radius: 16px;
+  margin-bottom: 18px;
+  outline: 2px solid #313944;
+  transition: outline-color 0.2s;
+  resize: vertical;
+  overflow-y: auto;
   word-break: break-word;
+}
+
+/* Ensure hint inside writing box remains appropriately styled */
+[contenteditable][role="textbox"] > span[style*="italic"] {
+  pointer-events: none;
+  user-select: none;
+  opacity: 0.36;
+}
+
+/* Focused state override */
+[contenteditable][role="textbox"]:focus {
+  outline: 2.5px solid #A3BE8C !important;
+  background: #29313F;
+}
+
+/* Print mode and plain text, override background */
+.print-mode [contenteditable][role="textbox"],
+@media print {
+  [contenteditable][role="textbox"] {
+    background: #fff !important;
+    color: #232634 !important;
+    outline: none !important;
+    box-shadow: none !important;
+    font-size: 1.22rem !important;
+    line-height: 1.7 !important;
+    border-radius: 0 !important;
+    font-family: 'Serif', 'Georgia', 'Times New Roman', serif !important;
+    padding: 0 !important;
+    min-height: 0 !important;
+    margin-bottom: 0 !important;
+  }
 }
 
 .print-mode .navbar,
