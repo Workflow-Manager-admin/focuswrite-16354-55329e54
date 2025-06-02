@@ -1,58 +1,5019 @@
-
-# Python ignorables
-logs/
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib64/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-
-pip-log.txt
-pip-delete-this-directory.txt
-htmlcov/
-.tox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-.hypothesis/
-.pytest_cache/
-
-# Ignore all directories containing pyvenv.cfg
-**/pyvenv.cfg
-**/*/pyvenv.cfg
-
-# Node.js ignorables
-node_modules/
-npm-debug.log
-yarn-error.log
-.pnp/
-.pnp.js
+# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
 .env
-.env.test
-.cache/
-.next/
-.nuxt/
-.vuepress/dist
-.serverless/
-.fusebox/
-.dynamodb/
-.file_activity_report.json
-core.*
-.core
-
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3
+# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3## Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3 # Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3P# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3y# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3t# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3h# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3o# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3n# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3 # Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3i# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3g# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3n# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3o# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3r# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3a# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3b# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3l# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3e# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3s# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3
+# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3l# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3o# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3g# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3s# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3/# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3
+# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3_# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3_# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3p# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3y# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3c# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3a# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3c# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3h# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3e# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3_# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3_# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3/# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3
+# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3*# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3.# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3p# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3y# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3[# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3c# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3o# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3d# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3]# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3
+# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3*# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3$# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3p# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3y# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3.# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3c# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3l# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3a# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3s# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3s# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3
+# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3*# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3.# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3s# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3o# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3
+# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3.# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3P# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3y# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3t# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3h# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3o# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3n# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3
+# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3b# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3u# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3i# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3l# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3d# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3/# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3
+# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3d# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3e# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3v# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3e# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3l# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3o# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3p# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3-# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3e# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3g# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3g# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3s# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3/# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3
+# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3d# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3i# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3s# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3t# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3/# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3
+# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3d# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3o# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3w# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3n# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3l# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3o# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3a# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3d# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3s# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3/# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3
+# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3e# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3g# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3g# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3s# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3/# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3
+# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3.# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3e# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3g# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3g# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3s# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3/# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3
+# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3l# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3i# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3b# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp36# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp34# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3/# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3
+# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3s# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3d# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3i# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3s# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3t# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3/# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3
+# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3v# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3a# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3r# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3/# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3
+# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3w# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3h# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3e# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3e# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3l# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3s# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3/# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3
+# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3*# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3.# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3e# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3g# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3g# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3-# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3i# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3n# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3f# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3o# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3/# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3
+# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3.# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3i# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3n# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3s# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3t# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3a# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3l# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3l# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3e# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3d# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3.# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3c# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3f# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3g# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3
+# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3*# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3.# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3e# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3g# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3g# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3
+# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3
+# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3p# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3i# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3p# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3-# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3l# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3o# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3g# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3.# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3t# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3x# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3t# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3
+# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3p# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3i# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3p# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3-# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3d# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3e# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3l# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3e# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3t# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3e# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3-# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3t# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3h# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3i# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3s# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3-# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3d# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3i# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3r# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3e# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3c# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3t# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3o# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3r# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3y# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3.# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3t# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3x# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3t# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3
+# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3h# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3t# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3m# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3l# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3c# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3o# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3v# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3/# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3
+# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3.# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3t# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3o# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3x# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3/# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3
+# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3.# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3c# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3o# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3v# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3e# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3r# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3a# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3g# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3e# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3
+# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3.# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3c# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3o# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3v# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3e# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3r# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3a# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3g# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3e# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3.# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3*# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3
+# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3.# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3c# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3a# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3c# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3h# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3e# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3
+# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3n# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3o# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3s# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3e# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3t# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3e# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3s# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3t# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3s# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3.# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3x# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3m# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3l# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3
+# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3c# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3o# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3v# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3e# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3r# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3a# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3g# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3e# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3.# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3x# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3m# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3l# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3
+# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3*# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3.# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3c# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3o# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3v# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3e# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3r# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3
+# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3.# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3h# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3y# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3p# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3o# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3t# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3h# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3e# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3s# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3i# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3s# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3/# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3
+# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3.# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3p# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3y# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3t# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3e# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3s# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3t# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3_# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3c# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3a# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3c# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3h# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3e# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3/# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3
+# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3
+# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3## Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3 # Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3I# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3g# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3n# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3o# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3r# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3e# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3 # Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3a# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3l# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3l# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3 # Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3d# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3i# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3r# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3e# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3c# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3t# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3o# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3r# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3i# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3e# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3s# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3 # Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3c# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3o# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3n# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3t# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3a# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3i# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3n# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3i# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3n# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3g# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3 # Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3p# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3y# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3v# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3e# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3n# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3v# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3.# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3c# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3f# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3g# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3
+# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3*# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3*# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3/# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3p# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3y# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3v# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3e# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3n# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3v# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3.# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3c# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3f# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3g# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3
+# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3*# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3*# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3/# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3*# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3/# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3p# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3y# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3v# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3e# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3n# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3v# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3.# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3c# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3f# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3g# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3
+# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3
+# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3## Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3 # Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3N# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3o# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3d# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3e# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3.# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3j# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3s# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3 # Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3i# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3g# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3n# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3o# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3r# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3a# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3b# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3l# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3e# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3s# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3
+# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3n# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3o# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3d# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3e# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3_# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3m# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3o# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3d# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3u# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3l# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3e# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3s# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3/# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3
+# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3n# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3p# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3m# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3-# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3d# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3e# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3b# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3u# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3g# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3.# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3l# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3o# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3g# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3
+# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3y# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3a# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3r# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3n# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3-# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3e# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3r# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3r# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3o# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3r# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3.# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3l# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3o# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3g# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3
+# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3.# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3p# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3n# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3p# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3/# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3
+# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3.# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3p# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3n# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3p# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3.# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3j# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3s# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3
+# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3.# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3e# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3n# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3v# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3
+# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3.# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3e# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3n# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3v# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3.# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3t# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3e# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3s# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3t# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3
+# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3.# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3c# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3a# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3c# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3h# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3e# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3/# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3
+# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3.# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3n# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3e# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3x# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3t# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3/# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3
+# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3.# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3n# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3u# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3x# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3t# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3/# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3
+# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3.# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3v# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3u# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3e# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3p# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3r# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3e# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3s# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3s# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3/# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3d# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3i# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3s# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3t# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3
+# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3.# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3s# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3e# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3r# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3v# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3e# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3r# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3l# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3e# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3s# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3s# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3/# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3
+# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3.# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3f# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3u# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3s# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3e# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3b# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3o# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3x# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3/# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3
+# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3.# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3d# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3y# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3n# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3a# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3m# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3o# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3d# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3b# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3/# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3
+# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3.# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3f# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3i# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3l# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3e# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3_# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3a# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3c# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3t# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3i# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3v# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3i# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3t# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3y# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3_# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3r# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3e# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3p# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3o# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3r# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3t# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3.# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3j# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3s# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3o# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3n# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3
+# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3c# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3o# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3r# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3e# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3.# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3*# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3
+# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3.# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3c# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3o# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3r# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3e# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3
+# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3
+# Ignore build outputs
+focuswrite/build/
+# Ignore local environment files
+.env
+.env.local
+# Node modules (should usually already be ignored by default)
+node_modules/
+# Ignore soundscapes in local dev but keep tracked copies in public/ for web
+focuswrite/public/soundscapes/*.mp3
