@@ -44,12 +44,6 @@ function App() {
         ? process.env.PUBLIC_URL + "/soundscapes/rain.mp3"
         : "/soundscapes/rain.mp3",
     },
-    cafe: {
-      label: "Café",
-      url: process.env.PUBLIC_URL
-        ? process.env.PUBLIC_URL + "/soundscapes/cafe.mp3"
-        : "/soundscapes/cafe.mp3",
-    },
     forest: {
       label: "Forest",
       url: process.env.PUBLIC_URL
