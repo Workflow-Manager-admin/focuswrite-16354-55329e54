@@ -302,81 +302,100 @@ function App() {
             </div>
           </div>
           {/* Soundscape Section */}
-          <div style={{ width: "44px", display: "flex", flexDirection: "column", alignItems: "center", gap: 18 }}>
-            <span style={{ fontSize: 21, color: "#A3BE8C", marginBottom: 10 }}>
+          <div style={{
+            width: "100%",
+            minWidth: 170,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: 16,
+            margin: "0 0 8px 0"
+          }}>
+            <span style={{ fontSize: 23, color: "#A3BE8C", marginBottom: 8 }}>
               <span role="img" aria-label="Soundscape">🎵</span>
             </span>
-            {/* Sound buttons */}
-            {Object.keys(sounds).map(skey => (
+            {/* Expanded, large labeled soundscape buttons */}
+            <div style={{ display: "flex", flexDirection: "column", gap: 10, width: "100%" }}>
+              {Object.keys(sounds).map(skey => (
+                <button
+                  key={skey}
+                  className="btn btn-large"
+                  title={sounds[skey].label}
+                  style={{
+                    backgroundColor: (currentSound === skey && isPlaying) ? "#A3BE8C" : "#313944",
+                    color: (currentSound === skey && isPlaying) ? "#232634" : "#fff",
+                    width: 158,
+                    height: 48,
+                    fontSize: "1.14rem",
+                    borderRadius: 9,
+                    border: currentSound === skey ? "2.3px solid #A3BE8C" : "1.2px solid #444",
+                    fontWeight: 600,
+                    letterSpacing: 0.2,
+                    boxShadow: (currentSound === skey && isPlaying) ? "0 2px 8px #A3BE8C22" : "0 1px 5px #1318242e",
+                    margin: "0 auto",
+                    transition: "background 0.18s, box-shadow 0.19s"
+                  }}
+                  onClick={() => handlePlaySound(skey)}
+                  aria-label={sounds[skey].label}
+                >
+                  {sounds[skey].label}
+                  {currentSound === skey && isPlaying && (
+                    <span style={{marginLeft: 11, fontSize: 19}} role="img" aria-label="playing">🔊</span>
+                  )}
+                </button>
+              ))}
+            </div>
+            <div style={{ marginTop: 8, display: "flex", gap: 12, flexDirection: "row", alignItems: "center" }}>
               <button
-                key={skey}
                 className="btn"
-                title={sounds[skey].label}
+                aria-label={isPlaying ? "Pause" : "Play"}
                 style={{
-                  backgroundColor: (currentSound === skey && isPlaying) ? "#A3BE8C" : "#333",
-                  color: (currentSound === skey && isPlaying) ? "#262b36" : "#fff",
-                  width: 38,
-                  height: 38,
-                  marginBottom: 4,
-                  fontSize: 13,
-                  borderRadius: 6,
-                  border: currentSound === skey ? "2px solid #A3BE8C" : "1px solid #444"
+                  background: "#232634",
+                  borderRadius: 15,
+                  fontSize: 19,
+                  color: "#A3BE8C",
+                  width: 34,
+                  height: 34,
+                  padding: 5,
+                  border: "1.5px solid #3c4554"
                 }}
-                onClick={() => handlePlaySound(skey)}
-                aria-label={sounds[skey].label}
+                onClick={handleToggleSound}
+                disabled={!currentSound}
               >
-                {sounds[skey].label[0]}
+                {isPlaying ? "⏸" : "▶️"}
               </button>
-            ))}
-            {/* Play/Pause and stop controls */}
-            <button
-              className="btn"
-              aria-label="Pause/Play"
-              style={{
-                background: "#232634",
-                borderRadius: 14,
-                fontSize: 17,
-                marginTop: 5,
-                color: "#A3BE8C",
-                width: 32,
-                height: 32,
-                padding: 3
-              }}
-              onClick={handleToggleSound}
-              disabled={!currentSound}
-            >
-              {isPlaying ? "⏸" : "▶️"}
-            </button>
-            <button
-              className="btn"
-              aria-label="Stop"
-              style={{
-                background: "#232634",
-                borderRadius: 14,
-                fontSize: 13,
-                marginTop: 2,
-                color: "#A3BE8C",
-                width: 32,
-                height: 32,
-                padding: 3
-              }}
-              onClick={handleStopSound}
-              disabled={!currentSound}
-            >
-              ⏹
-            </button>
-
-            {/* Volume slider */}
-            <input
-              type="range"
-              min={0}
-              max={1}
-              step={0.01}
-              value={volume}
-              style={{ marginTop: 8, accentColor: "#A3BE8C", width: 39 }}
-              onChange={handleChangeVolume}
-              aria-label="Soundscape Volume"
-            />
+              <button
+                className="btn"
+                aria-label="Stop"
+                style={{
+                  background: "#232634",
+                  borderRadius: 15,
+                  fontSize: 15,
+                  color: "#A3BE8C",
+                  width: 34,
+                  height: 34,
+                  padding: 5,
+                  border: "1.5px solid #3c4554"
+                }}
+                onClick={handleStopSound}
+                disabled={!currentSound}
+              >
+                ⏹
+              </button>
+            </div>
+            <div style={{ width: 118, marginTop: 8, alignSelf: "center", display: "flex", flexDirection: "row", alignItems: "center", gap: 8 }}>
+              <span role="img" aria-label="Volume down" style={{ fontSize: 18, color: "#A3BE8C" }}>🔈</span>
+              <input
+                type="range"
+                min={0}
+                max={1}
+                step={0.01}
+                value={volume}
+                style={{ accentColor: "#A3BE8C", width: 80, verticalAlign: "middle" }}
+                onChange={handleChangeVolume}
+                aria-label="Soundscape Volume"
+              />
+            </div>
           </div>
         </aside>
 
