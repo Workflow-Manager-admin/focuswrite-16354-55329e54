@@ -227,16 +227,30 @@ body {
   }
 }
 
+/* HIDE non-writing elements in print mode and @media print */
 .print-mode .navbar,
 .print-mode aside,
 .print-mode .analytics-pill,
 .print-mode .btn,
 .print-mode .sidebar-pomodoro,
-.print-mode .print-controls {
+.print-mode .print-controls,
+.print-mode .analytics-count,
+.print-mode .analytics-label,
+.print-mode .description,
+.print-mode .subtitle,
+.print-mode .print-hint,
+.print-mode [role="banner"],
+.print-mode [aria-label*="sidebar"],
+.print-mode [aria-label*="pomodoro"],
+.print-mode [aria-label*="analytics"],
+.print-mode [aria-label*="Goals"],
+.print-mode [aria-label*="streak"],
+.print-mode [role="complementary"] {
   display: none !important;
 }
 
-.print-mode main, .print-mode .app {
+/* Print mode: main and section only show writing area, white simple background */
+.print-mode main, .print-mode .app, .print-mode section {
   background: #fff !important;
   color: #232634 !important;
   box-shadow: none !important;
@@ -245,7 +259,7 @@ body {
 .print-mode section {
   margin: 0 auto !important;
   padding: 0 !important;
-  max-width: 720px !important;
+  max-width: 680px !important;
   min-width: 0 !important;
   width: 100vw !important;
   background: #fff !important;
@@ -261,15 +275,22 @@ body {
   border-radius: 0 !important;
   font-family: 'Serif', 'Georgia', 'Times New Roman', serif !important;
   padding: 0 !important;
+  margin: 0 !important;
+  min-height: 0 !important;
 }
 
 /* Dedicated print styles */
 @media print {
-  body, .app, main, section {
+  html, body, #root, .app, main, section {
     background: #fff !important;
     color: #232634 !important;
     box-shadow: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100vw !important;
+    min-width: 0 !important;
   }
+  /* Hide everything except section (the document body) */
   .navbar,
   aside,
   .analytics-pill,
@@ -277,7 +298,6 @@ body {
   .btn,
   .print-controls,
   .analytics-count,
-  .analytics-label,
   .analytics-label,
   .description,
   .subtitle,
@@ -293,12 +313,17 @@ body {
   }
   main {
     padding: 0 !important;
+    margin: 0 !important;
+    background: #fff !important;
+    min-width: 0 !important;
   }
   section {
-    margin: 0 auto !important;
-    padding-top: 0 !important;
-    max-width: 720px !important;
+    margin: 30px auto !important;
+    padding: 0 !important;
+    max-width: 680px !important;
     width: 100vw !important;
+    background: #fff !important;
+    min-width: 0 !important;
   }
   [contenteditable], [role="textbox"] {
     background: #fff !important;
@@ -312,6 +337,8 @@ body {
     padding: 0 !important;
     margin: 0 !important;
     min-height: 0 !important;
+    white-space: pre-wrap !important;
+    word-break: break-word !important;
   }
   /* Remove all box-shadows and unneeded decorations */
   * {
@@ -319,15 +346,14 @@ body {
     text-shadow: none !important;
     background-image: none !important;
   }
-  /* Improve print readability */
-  [contenteditable]::after,
-  [role="textbox"]::after {
-    content: none !important;
-  }
   /* Remove scrollbars */
   ::-webkit-scrollbar {
     display: none !important;
   }
+  /* Ensure print breaks for long text (optional, uncomment if needed) */
+  /* [contenteditable], [role="textbox"] {
+    page-break-inside: auto !important;
+  } */
 }
 
 
