@@ -40,6 +40,18 @@ function App() {
   //
   // Waterfall placeholder is public domain: https://cdn.pixabay.com/audio/2022/03/15/audio_115b9a05f4.mp3
   // (Pixabay "small waterfall" - CC0)
+  // Resolve local or fallback audio for Waterfall
+  function getWaterfallURL() {
+    // Try to use local file; if it doesn't exist, fallback to a public CC0 waterfall MP3
+    const localUrl = process.env.PUBLIC_URL
+      ? process.env.PUBLIC_URL + "/soundscapes/waterfall.mp3"
+      : "/soundscapes/waterfall.mp3";
+    // As direct public assets cannot be detected statically, we'll optimistically try local, but handle error at playback
+    return localUrl;
+  }
+  // Fallback URL for public domain waterfall (CC0)
+  const fallbackWaterfallURL = "https://cdn.pixabay.com/audio/2022/03/15/audio_115b9a05f4.mp3";
+
   const sounds = {
     rain: {
       label: "Rain",
@@ -55,35 +67,72 @@ function App() {
     },
     waterfall: {
       label: "Waterfall",
-      url:
-        // Use a public domain CC0 waterfall sound, or replace with local "/soundscapes/waterfall.mp3" if uploaded
-        "https://cdn.pixabay.com/audio/2022/03/15/audio_115b9a05f4.mp3",
-      // If in future a local waterfall sound is available, swap the above with PROCESS.ENV logic as per rain/forest
-      // e.g.
-      // url: process.env.PUBLIC_URL
-      //   ? process.env.PUBLIC_URL + "/soundscapes/waterfall.mp3"
-      //   : "/soundscapes/waterfall.mp3",
+      url: getWaterfallURL(),
+      // Extra: used for fallback or upload prompt
     },
   };
+
+  // For "Waterfall" user-upload, store uploaded file in a ref
+  const waterfallInputRef = useRef();
+  const [uploadedWaterfall, setUploadedWaterfall] = useState(null);
+  const [waterfallLoadError, setWaterfallLoadError] = useState(false);
 
   // Store Howl instance in ref to avoid re-renders
   const [howlObj, setHowlObj] = useState(null);
 
-  // Soundscape handlers (Rain & Forest only)
+  // Soundscape handlers (Rain, Forest, and Waterfall)
   const handlePlaySound = (soundKey) => {
     // If a sound is already playing, stop it
     if (howlObj) howlObj.stop();
-    const sound = new Howl({
-      src: [sounds[soundKey].url],
-      volume,
-      loop: true,
-      html5: true,
-      onend: () => setIsPlaying(false),
-    });
-    setHowlObj(sound);
-    setCurrentSound(soundKey);
-    setIsPlaying(true);
-    sound.play();
+
+    let srcUrl = sounds[soundKey].url;
+    // Special logic for Waterfall: prefer uploaded, then local, then fallback
+    let useUploaded = false;
+    if (soundKey === "waterfall") {
+      if (uploadedWaterfall) {
+        srcUrl = uploadedWaterfall;
+        useUploaded = true;
+      }
+    }
+
+    let sound;
+    let errored = false;
+
+    const playSound = (url, forWaterfallFallback=false) => {
+      const h = new Howl({
+        src: [url],
+        volume,
+        loop: true,
+        html5: true,
+        onend: () => setIsPlaying(false),
+        onloaderror: (id, err) => {
+          if (soundKey === "waterfall") {
+            if (!forWaterfallFallback && !useUploaded) {
+              // Try fallback remote file
+              setWaterfallLoadError(true); // also for UI
+              playSound(fallbackWaterfallURL, true);
+            } else if (!forWaterfallFallback && useUploaded) {
+              setWaterfallLoadError(true); // show upload error UI
+            } else {
+              // Fallback failed too, force upload UI
+              setWaterfallLoadError(true);
+            }
+          }
+        },
+        onplayerror: function () {
+          h.once('unlock', function () {
+            h.play();
+          });
+        }
+      });
+      setHowlObj(h);
+      setCurrentSound(soundKey);
+      setIsPlaying(true);
+      setWaterfallLoadError(false);
+      h.play();
+    };
+
+    playSound(srcUrl);
   };
   const handleToggleSound = () => {
     if (!howlObj) return;
