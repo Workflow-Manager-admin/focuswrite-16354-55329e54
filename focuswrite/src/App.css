@@ -1,9 +1,11 @@
 :root {
-  --base-light: #00ffff;
-  --base-dark: #00008b;
+  --base-light: #A3BE8C;
+  --base-dark: #232634;
+  --ui-dark: #2E3440;
   --text-color: #ffffff;
   --text-secondary: rgba(255, 255, 255, 0.7);
-  --border-color: rgba(255, 255, 255, 0.1);
+  --border-color: rgba(255, 255, 255, 0.09);
+  --accent: #A3BE8C;
 }
 
 body {

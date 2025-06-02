@@ -16,8 +16,25 @@ function App() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [volume, setVolume] = useState(0.4);
 
-  // Example static sound URLs (these can be replaced by actual static assets)
-  // Placeholder public online samples, for demo purposes only.
+  // Editable writing area state
+  const [writing, setWriting] = useState('');
+  const [focused, setFocused] = useState(false);
+  const writingRef = useRef(null);
+
+  // Analytics
+  const wordCount = writing.trim() === '' ? 0 : writing.trim().split(/\s+/).length;
+  const goal = 500;
+
+  // Pomodoro timer state (UI only for now)
+  const [pomodoroStatus, setPomodoroStatus] = useState('idle'); // 'idle' | 'running' | 'break'
+  const [timer, setTimer] = useState(25 * 60); // seconds - default 25 mins
+  // For live updating timer
+  // (implementation will go in the next task)
+
+  // Print mode
+  const [printMode, setPrintMode] = useState(false);
+
+  // Example static sound URLs
   const sounds = {
     rain: {
       label: 'Rain',
@@ -36,13 +53,10 @@ function App() {
   // Store Howl instance in ref to avoid re-renders
   const [howlObj, setHowlObj] = useState(null);
 
-  // Handler for playing a soundscape
+  // Soundscape handlers
   const handlePlaySound = (soundKey) => {
     // If a sound is already playing, stop it
-    if (howlObj) {
-      howlObj.stop();
-    }
-    // New Howl instance
+    if (howlObj) howlObj.stop();
     const sound = new Howl({
       src: [sounds[soundKey].url],
       volume,
@@ -55,8 +69,6 @@ function App() {
     setIsPlaying(true);
     sound.play();
   };
-
-  // Handler for toggling play/pause
   const handleToggleSound = () => {
     if (!howlObj) return;
     if (isPlaying) {
@@ -67,8 +79,6 @@ function App() {
       setIsPlaying(true);
     }
   };
-
-  // Handler for stopping sound
   const handleStopSound = () => {
     if (howlObj) {
       howlObj.stop();
@@ -77,9 +87,7 @@ function App() {
       setIsPlaying(false);
     }
   };
-
-  // Handler for volume change
-  const handleChangeVolume = (e) => {
+  const handleChangeVolume = e => {
     const v = parseFloat(e.target.value);
     setVolume(v);
     if (howlObj) {
@@ -87,8 +95,29 @@ function App() {
     }
   };
 
-  // Print mode toggle (minimal demonstration)
-  const [printMode, setPrintMode] = useState(false);
+  // Writing area contentEditable handlers
+  // Handle input for live word count
+  const handleWritingInput = (e) => {
+    setWriting(e.target.innerText);
+  };
+  // Handle focus for subtle highlight
+  const handleWritingFocus = () => setFocused(true);
+  const handleWritingBlur = () => setFocused(false);
+
+  // Print mode toggle
+  const togglePrintMode = () => setPrintMode(v => !v);
+
+  // Pomodoro click handlers (UI skeleton, timer not functional)
+  const handleStartPomodoro = () => setPomodoroStatus('running');
+  const handleStopPomodoro = () => setPomodoroStatus('idle');
+  const handleBreakPomodoro = () => setPomodoroStatus('break');
+
+  // Timer UI render (shell only)
+  const formatTime = (secs) => {
+    const m = Math.floor(secs / 60);
+    const s = secs % 60;
+    return `${m < 10 ? '0' : ''}${m}:${s < 10 ? '0' : ''}${s}`;
+  };
 
   return (
     <div className={printMode ? "app print-mode" : "app"}>
@@ -100,14 +129,12 @@ function App() {
             <span style={{ letterSpacing: 1.2 }}>SerenityWrite</span>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-            {/* Analytics and Streak placeholder icons/buttons */}
-            <button className="btn" style={{ marginRight: 8 }}>
-              <span role="img" aria-label="Analytics">📊</span>&nbsp;Analytics
-            </button>
-            <button className="btn" style={{ marginRight: 8 }}>
-              <span role="img" aria-label="Streak">🔥</span>&nbsp;Streak
-            </button>
-            <button className="btn" onClick={() => setPrintMode(!printMode)}>
+            <div className="analytics-pill">
+              <span role="img" aria-label="Wordcount" style={{ fontSize: 16 }}>✍️</span>
+              <span className="analytics-count">{wordCount}</span>
+              <span className="analytics-label"> words</span>
+            </div>
+            <button className={printMode ? "btn btn-active" : "btn"} onClick={togglePrintMode}>
               <span role="img" aria-label="Print">🖨️</span> Print Mode
             </button>
           </div>
@@ -132,15 +159,55 @@ function App() {
           alignItems: "center",
           paddingTop: 36,
           gap: 24,
-          minHeight: "100%"
+          minHeight: "100%",
         }}>
-          {/* Pomodoro Timer Placeholder */}
-          <button className="btn" title="Pomodoro" style={{ width: 44, height: 44, borderRadius: 8 }}>
-            <span role="img" aria-label="Pomodoro">⏲️</span>
-          </button>
+          {/* Pomodoro Timer Shell */}
+          <div
+            className="sidebar-pomodoro"
+            style={{
+              width: 48,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              marginBottom: 12
+            }}
+          >
+            <span style={{
+              fontSize: 17,
+              color: pomodoroStatus === "break" ? "#8FBCBB" : "#A3BE8C",
+              marginBottom: 4
+            }}>
+              <span role="img" aria-label="Pomodoro">⏲️</span>
+            </span>
+            <div style={{
+              fontSize: 13,
+              color: "#fff",
+            }}>{pomodoroStatus === "break" ? "Break" : pomodoroStatus === "running" ? "Focus" : "Idle"}</div>
+            <div style={{
+              fontSize: 15,
+              marginTop: 2,
+              color: "#A3BE8C",
+              fontWeight: 600,
+            }}>{formatTime(timer)}</div>
+            <div style={{ display: 'flex', gap: 2, marginTop: 6 }}>
+              {pomodoroStatus !== 'running' && (
+                <button className="btn" title="Start Pomodoro" style={{ padding: 3, fontSize: 15, width: 28, height: 28, borderRadius: 6 }} onClick={handleStartPomodoro}>
+                  ▶️
+                </button>
+              )}
+              {pomodoroStatus === 'running' && (
+                <button className="btn" title="Stop" style={{ padding: 3, fontSize: 14, width: 28, height: 28, borderRadius: 6, background: "#CE5454" }} onClick={handleStopPomodoro}>
+                  ⏹
+                </button>
+              )}
+              <button className="btn" title="Break" style={{ padding: 3, fontSize: 14, width: 28, height: 28, borderRadius: 6, background: "#8FBCBB" }} onClick={handleBreakPomodoro}>
+                ☕
+              </button>
+            </div>
+          </div>
           {/* Soundscape Section */}
           <div style={{ width: "44px", display: "flex", flexDirection: "column", alignItems: "center", gap: 18 }}>
-            <span style={{ fontSize: 22, color: "#A3BE8C", marginBottom: 10 }}>
+            <span style={{ fontSize: 21, color: "#A3BE8C", marginBottom: 10 }}>
               <span role="img" aria-label="Soundscape">🎵</span>
             </span>
             {/* Sound buttons */}
@@ -160,6 +227,7 @@ function App() {
                   border: currentSound === skey ? "2px solid #A3BE8C" : "1px solid #444"
                 }}
                 onClick={() => handlePlaySound(skey)}
+                aria-label={sounds[skey].label}
               >
                 {sounds[skey].label[0]}
               </button>
@@ -170,10 +238,13 @@ function App() {
               aria-label="Pause/Play"
               style={{
                 background: "#232634",
-                borderRadius: 16,
+                borderRadius: 14,
                 fontSize: 17,
-                marginTop: 3,
-                color: "#A3BE8C"
+                marginTop: 5,
+                color: "#A3BE8C",
+                width: 32,
+                height: 32,
+                padding: 3
               }}
               onClick={handleToggleSound}
               disabled={!currentSound}
@@ -185,10 +256,13 @@ function App() {
               aria-label="Stop"
               style={{
                 background: "#232634",
-                borderRadius: 16,
+                borderRadius: 14,
                 fontSize: 13,
-                marginTop: 3,
-                color: "#A3BE8C"
+                marginTop: 2,
+                color: "#A3BE8C",
+                width: 32,
+                height: 32,
+                padding: 3
               }}
               onClick={handleStopSound}
               disabled={!currentSound}
@@ -205,12 +279,9 @@ function App() {
               value={volume}
               style={{ marginTop: 8, accentColor: "#A3BE8C", width: 39 }}
               onChange={handleChangeVolume}
+              aria-label="Soundscape Volume"
             />
           </div>
-          {/* AI Enhancement Button Placeholder */}
-          <button className="btn" title="AI Enhancement" style={{ width: 44, height: 44, borderRadius: 8 }}>
-            <span role="img" aria-label="AI Enhance">🤖</span>
-          </button>
         </aside>
 
         {/* Writing Area (center) */}
@@ -221,70 +292,130 @@ function App() {
           alignItems: "center",
           padding: "30px 0"
         }}>
-          <div style={{
-            maxWidth: 720,
-            width: "100%",
-            minHeight: 360,
-            background: printMode ? "#fff" : "#262b36",
-            color: printMode ? "#232634" : "#fff",
-            borderRadius: 16,
-            boxShadow: printMode ? "none" : "0 2px 18px rgba(44,53,72,0.09)",
-            padding: "40px 32px",
-            fontSize: "1.25rem",
-            lineHeight: 1.7,
-            marginBottom: 18,
-            outline: printMode ? "none" : "2px solid #313944"
-          }}
+          <div
+            ref={writingRef}
+            style={{
+              maxWidth: 720,
+              width: "100%",
+              minHeight: 360,
+              background: printMode ? "#fff" : "#262b36",
+              color: printMode ? "#232634" : "#fff",
+              borderRadius: 16,
+              boxShadow: printMode ? "none" : (focused ? "0 0 0 2.5px #A3BE8C" : "0 2px 18px rgba(44,53,72,0.09)"),
+              padding: "40px 32px",
+              fontSize: "1.25rem",
+              lineHeight: 1.7,
+              marginBottom: 18,
+              outline: printMode ? "none" : (focused ? "2.5px solid #A3BE8C" : "2px solid #313944"),
+              transition: "outline-color 0.2s"
+            }}
             contentEditable={!printMode}
             suppressContentEditableWarning={true}
             spellCheck={true}
             aria-label="SerenityWrite main writing area"
+            tabIndex={0}
+            onInput={handleWritingInput}
+            onFocus={handleWritingFocus}
+            onBlur={handleWritingBlur}
+            role="textbox"
           >
-            {/* Placeholder for writing content */}
-            <span style={{ opacity: 0.38, fontStyle: "italic" }}>[ Start writing here... ]</span>
+            {writing.length === 0 && !printMode && (
+              <span style={{ opacity: 0.36, fontStyle: "italic", userSelect: "none" }}>[ Start writing here... ]</span>
+            )}
+            {writing.length > 0 && writing}
           </div>
-          {/* Session Analytics, Pomodoro, Goals: placeholder below writing area */}
-          <div style={{ display: "flex", flexDirection: "row", gap: 36, justifyContent: "center", alignItems: "center", marginTop: 6 }}>
-            <div style={{ color: "#A3BE8C", fontSize: 15, fontWeight: 500 }}>
-              <span role="img" aria-label="Word Count">✍️</span> 0 words
+          {/* Session Analytics and Pomodoro */}
+          <div style={{
+            display: "flex",
+            flexDirection: "row",
+            gap: 36,
+            justifyContent: "center",
+            alignItems: "center",
+            marginTop: 6
+          }}>
+            {/* Word Count */}
+            <div style={{
+              color: "#A3BE8C",
+              fontSize: 15,
+              fontWeight: 500,
+              minWidth: 85
+            }}>
+              <span role="img" aria-label="Word Count">✍️</span> {wordCount} words
             </div>
-            <div style={{ color: "#8FBCBB", fontSize: 15 }}>
-              <span role="img" aria-label="Timer">⏰</span> 00:00
+            {/* Pomodoro Timer */}
+            <div style={{
+              color: pomodoroStatus === "break" ? "#8FBCBB" : "#B48EAD",
+              fontSize: 15,
+              minWidth: 87
+            }}>
+              <span role="img" aria-label="Timer">⏰</span> {formatTime(timer)}
             </div>
-            <div style={{ color: "#A3BE8C", fontSize: 15 }}>
-              <span role="img" aria-label="Goal">🎯</span> 0 / 500 words
+            {/* Goal Display */}
+            <div style={{
+              color: "#A3BE8C",
+              fontSize: 15,
+              minWidth: 100
+            }}>
+              <span role="img" aria-label="Goal">🎯</span> {wordCount} / {goal} words
             </div>
           </div>
         </section>
 
-        {/* Right Panel: Analytics, Progress/Goals */}
+        {/* Right Panel: Analytics */}
         <aside style={{
-          width: 220,
+          width: 230,
           background: "#232634",
           borderLeft: "1.5px solid var(--border-color)",
           minHeight: "100%",
           padding: "36px 18px 0 18px",
           display: "flex",
           flexDirection: "column",
-          gap: 16
+          gap: 20
         }}>
           <div style={{ marginBottom: 14 }}>
-            <div style={{ fontSize: "1.02rem", color: "#A3BE8C", fontWeight: 600, marginBottom: 7, letterSpacing: ".05em" }}>
+            <div style={{ fontSize: "1.07rem", color: "#A3BE8C", fontWeight: 600, marginBottom: 7, letterSpacing: ".04em" }}>
               Analytics
             </div>
-            <div style={{ color: "#fff", fontSize: "1.07rem" }}>[ Word count, session typing speed, focus streak ]</div>
+            <div style={{ color: "#fff", fontSize: "1.09rem", marginBottom: 6 }}>
+              Words written: <span style={{ fontWeight: 600 }}>{wordCount}</span>
+            </div>
+            {/* Additional analytics features may go here */}
           </div>
           <div style={{ marginBottom: 12 }}>
-            <div style={{ fontSize: "1.02rem", color: "#A3BE8C", fontWeight: 600, marginBottom: 7 }}>
+            <div style={{ fontSize: "1.07rem", color: "#A3BE8C", fontWeight: 600, marginBottom: 7 }}>
               Pomodoro
             </div>
-            <div style={{ color: "#fff", fontSize: "1.07rem" }}>[ Pomodoro controls here ]</div>
+            <div style={{ color: "#fff", fontSize: "1.09rem" }}>
+              {pomodoroStatus === 'idle'
+                ? "Ready to focus"
+                : pomodoroStatus === 'running'
+                  ? "Session in progress"
+                  : "On break"}
+            </div>
           </div>
           <div>
-            <div style={{ fontSize: "1.02rem", color: "#A3BE8C", fontWeight: 600, marginBottom: 7 }}>
+            <div style={{ fontSize: "1.07rem", color: "#A3BE8C", fontWeight: 600, marginBottom: 7 }}>
               Goals & Streaks
             </div>
-            <div style={{ color: "#fff", fontSize: "1.07rem" }}>[ Progress bars, writing streak ]</div>
+            <div style={{ color: "#fff", fontSize: "1.09rem" }}>
+              Goal: {wordCount} / {goal} words
+              <div style={{
+                margin: "7px 0 0 0",
+                width: "100%",
+                height: 6,
+                background: "#333",
+                borderRadius: 4,
+                overflow: "hidden"
+              }}>
+                <div style={{
+                  width: `${Math.min(100, Math.round((wordCount / goal) * 100))}%`,
+                  height: "100%",
+                  background: "#A3BE8C",
+                  borderRadius: 4,
+                  transition: "width .3s"
+                }} />
+              </div>
+            </div>
           </div>
         </aside>
       </main>
