@@ -37,6 +37,9 @@ function App() {
 
   // Real static sound URLs from public folder
   // Audio files must be placed at "focuswrite/public/soundscapes/<file>.mp3"
+  //
+  // Waterfall placeholder is public domain: https://cdn.pixabay.com/audio/2022/03/15/audio_115b9a05f4.mp3
+  // (Pixabay "small waterfall" - CC0)
   const sounds = {
     rain: {
       label: "Rain",
@@ -49,6 +52,17 @@ function App() {
       url: process.env.PUBLIC_URL
         ? process.env.PUBLIC_URL + "/soundscapes/forest.mp3"
         : "/soundscapes/forest.mp3",
+    },
+    waterfall: {
+      label: "Waterfall",
+      url:
+        // Use a public domain CC0 waterfall sound, or replace with local "/soundscapes/waterfall.mp3" if uploaded
+        "https://cdn.pixabay.com/audio/2022/03/15/audio_115b9a05f4.mp3",
+      // If in future a local waterfall sound is available, swap the above with PROCESS.ENV logic as per rain/forest
+      // e.g.
+      // url: process.env.PUBLIC_URL
+      //   ? process.env.PUBLIC_URL + "/soundscapes/waterfall.mp3"
+      //   : "/soundscapes/waterfall.mp3",
     },
   };
 
@@ -344,7 +358,7 @@ function App() {
             <span style={{ fontSize: 23, color: "#A3BE8C", marginBottom: 8 }}>
               <span role="img" aria-label="Soundscape">🎵</span>
             </span>
-            {/* Expanded, large labeled soundscape buttons; only Rain and Forest options */}
+            {/* Expanded, large labeled soundscape buttons: Rain, Forest, Waterfall */}
             <div style={{ display: "flex", flexDirection: "column", gap: 10, width: "100%" }}>
               {Object.keys(sounds).map(skey => (
                 <button
@@ -369,6 +383,10 @@ function App() {
                   aria-label={sounds[skey].label}
                 >
                   {sounds[skey].label}
+                  {/* Optionally add icon for Waterfall */}
+                  {skey === "waterfall" && (
+                    <span role="img" aria-label="Waterfall" style={{ marginLeft: 8, fontSize: 21 }}>💧</span>
+                  )}
                   {currentSound === skey && isPlaying && (
                     <span style={{marginLeft: 11, fontSize: 19}} role="img" aria-label="playing">🔊</span>
                   )}
