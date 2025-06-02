@@ -244,7 +244,8 @@ function App() {
       }}>
         {/* Feature Sidebar (left) */}
         <aside style={{
-          width: 80,
+          width: 200,
+          minWidth: 200,
           background: "#2E3440",
           borderRight: "1.5px solid var(--border-color)",
           display: "flex",
