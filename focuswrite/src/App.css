@@ -23,6 +23,26 @@ body {
   flex-direction: column;
 }
 
+/* SerenityWrite Sidebar Customization */
+/* 
+ * Increased width for aside/sidebar for better soundscape button layout.
+ * This ensures 'Rain', 'Café', and 'Forest' soundscape buttons are visually balanced and not cramped.
+ * Sidebar and control spacing fits original SerenityWrite design cues.
+ */
+
+.serenity-sidebar {
+  width: 200px;
+  min-width: 200px;
+  background: #2E3440;
+  border-right: 1.5px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 36px;
+  gap: 24px;
+  min-height: 100%;
+}
+
 .navbar {
   background-color: var(--base-dark);
   padding: 16px;
