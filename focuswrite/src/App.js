@@ -455,7 +455,7 @@ function App() {
                         <span style={{ marginLeft: 10, fontSize: 21, verticalAlign: "middle" }} role="img" aria-label="playing">🔊</span>
                       )}
                     </button>
-                    {/* If Waterfall errored, provide upload/fallback prompt below button */}
+                    {/* If Waterfall errored, provide upload prompt below button */}
                     {skey === "waterfall" && waterfallLoadError && (
                       <section
                         style={{
@@ -471,7 +471,7 @@ function App() {
                         aria-live="polite"
                         aria-atomic="true"
                       >
-                        Could not play Waterfall sound from local or fallback source.<br />
+                        Could not play Waterfall sound: <strong>Local /soundscapes/waterfall.mp3 file not found or inaccessible.</strong><br />
                         <label
                           htmlFor="waterfall-upload"
                           style={{
@@ -501,7 +501,7 @@ function App() {
                           />
                         </label>
                         <span style={{ fontSize: 13.3, color: "#E8B88B" }}>
-                          Or, <a href={fallbackWaterfallURL} target="_blank" rel="noopener noreferrer" style={{ color: "#ffedc0" }}>try this public Waterfall MP3</a>
+                          The default waterfall sound is unavailable. Please upload a local MP3 of your choice.
                         </span>
                       </section>
                     )}
