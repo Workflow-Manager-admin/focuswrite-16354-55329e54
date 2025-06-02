@@ -25,11 +25,12 @@ function App() {
   const wordCount = writing.trim() === '' ? 0 : writing.trim().split(/\s+/).length;
   const goal = 500;
 
-  // Pomodoro timer state (UI only for now)
-  const [pomodoroStatus, setPomodoroStatus] = useState('idle'); // 'idle' | 'running' | 'break'
-  const [timer, setTimer] = useState(25 * 60); // seconds - default 25 mins
-  // For live updating timer
-  // (implementation will go in the next task)
+  // Pomodoro timer state and logic
+  // 'focus': focus session; 'break': break session; 'paused': paused timer; 'idle': not started
+  const [pomodoroStatus, setPomodoroStatus] = useState('idle'); // 'focus' | 'break' | 'paused' | 'idle'
+  const [timer, setTimer] = useState(25 * 60); // seconds left
+  const [pomodoroMode, setPomodoroMode] = useState('focus'); // distinguishes between focus and break visually
+  const [intervalId, setIntervalId] = useState(null);
 
   // Print mode
   const [printMode, setPrintMode] = useState(false);
@@ -107,12 +108,97 @@ function App() {
   // Print mode toggle
   const togglePrintMode = () => setPrintMode(v => !v);
 
-  // Pomodoro click handlers (UI skeleton, timer not functional)
-  const handleStartPomodoro = () => setPomodoroStatus('running');
-  const handleStopPomodoro = () => setPomodoroStatus('idle');
-  const handleBreakPomodoro = () => setPomodoroStatus('break');
+  // Pomodoro timer durations
+  const FOCUS_LENGTH = 25 * 60;
+  const BREAK_LENGTH = 5 * 60;
 
-  // Timer UI render (shell only)
+  // PUBLIC_INTERFACE
+  // Start or resume pomodoro timer
+  const handleStartPomodoro = () => {
+    // If resuming from pause, don't reset timer
+    if (pomodoroStatus === 'paused') {
+      setPomodoroStatus(pomodoroMode);
+    } else if (pomodoroStatus === 'break') {
+      setPomodoroStatus('break');
+      setPomodoroMode('break');
+    } else {
+      setTimer(FOCUS_LENGTH);
+      setPomodoroMode('focus');
+      setPomodoroStatus('focus');
+    }
+  };
+
+  // PUBLIC_INTERFACE
+  // Pause the timer
+  const handlePausePomodoro = () => {
+    setPomodoroStatus('paused');
+  };
+
+  // PUBLIC_INTERFACE
+  // Reset the timer to initial state
+  const handleResetPomodoro = () => {
+    setPomodoroStatus('idle');
+    setPomodoroMode('focus');
+    setTimer(FOCUS_LENGTH);
+    if (intervalId) {
+      clearInterval(intervalId);
+      setIntervalId(null);
+    }
+  };
+
+  // PUBLIC_INTERFACE
+  // Switch to break mode manually
+  const handleBreakPomodoro = () => {
+    setTimer(BREAK_LENGTH);
+    setPomodoroMode('break');
+    setPomodoroStatus('break');
+    if (intervalId) {
+      clearInterval(intervalId);
+      setIntervalId(null);
+    }
+  };
+
+  // Pomodoro Timer Effect for countdown
+  useEffect(() => {
+    if (pomodoroStatus === 'focus' || pomodoroStatus === 'break') {
+      if (intervalId) clearInterval(intervalId);
+      // Only create interval if timer > 0
+      if (timer > 0) {
+        const id = setInterval(() => {
+          setTimer(prev => {
+            if (prev <= 1) {
+              clearInterval(id);
+              // Auto-switch logic: focus -> break -> focus
+              if (pomodoroStatus === 'focus') {
+                setPomodoroStatus('break');
+                setPomodoroMode('break');
+                setTimer(BREAK_LENGTH);
+              } else if (pomodoroStatus === 'break') {
+                setPomodoroStatus('focus');
+                setPomodoroMode('focus');
+                setTimer(FOCUS_LENGTH);
+              }
+            }
+            return prev > 0 ? prev - 1 : 0;
+          });
+        }, 1000);
+        setIntervalId(id);
+        return () => clearInterval(id);
+      }
+    } else if (pomodoroStatus === 'paused' || pomodoroStatus === 'idle') {
+      if (intervalId) {
+        clearInterval(intervalId);
+        setIntervalId(null);
+      }
+    }
+    // Cleanup interval when component unmounts
+    return () => {
+      if (intervalId) clearInterval(intervalId);
+    };
+    // eslint-disable-next-line
+  }, [pomodoroStatus, timer]);
+
+  // Timer format helper
   const formatTime = (secs) => {
     const m = Math.floor(secs / 60);
     const s = secs % 60;
