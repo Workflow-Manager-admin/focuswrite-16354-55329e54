@@ -269,6 +269,16 @@ function App() {
     return `${m < 10 ? '0' : ''}${m}:${s < 10 ? '0' : ''}${s}`;
   };
 
+  // Cleanup uploadedWaterfall URL when component unmounts
+  useEffect(() => {
+    return () => {
+      if (uploadedWaterfall) {
+        URL.revokeObjectURL(uploadedWaterfall);
+      }
+    };
+    // eslint-disable-next-line
+  }, []);
+
   return (
     <div className={printMode ? "app print-mode" : "app"}>
       {/* Top Bar / Navbar */}
