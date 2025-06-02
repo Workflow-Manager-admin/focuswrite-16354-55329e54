@@ -12,7 +12,7 @@ import { Howl } from 'howler';
  */
 function App() {
   // Soundscape setup
-  const [currentSound, setCurrentSound] = useState(null); // "rain", "cafe", "forest"
+  const [currentSound, setCurrentSound] = useState(null); // "rain", "forest"
   const [isPlaying, setIsPlaying] = useState(false);
   const [volume, setVolume] = useState(0.4);
 
@@ -55,7 +55,7 @@ function App() {
   // Store Howl instance in ref to avoid re-renders
   const [howlObj, setHowlObj] = useState(null);
 
-  // Soundscape handlers
+  // Soundscape handlers (Rain & Forest only)
   const handlePlaySound = (soundKey) => {
     // If a sound is already playing, stop it
     if (howlObj) howlObj.stop();
