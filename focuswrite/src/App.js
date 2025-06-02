@@ -35,20 +35,27 @@ function App() {
   // Print mode
   const [printMode, setPrintMode] = useState(false);
 
-  // Example static sound URLs
+  // Real static sound URLs from public folder
+  // Audio files must be placed at "focuswrite/public/soundscapes/<file>.mp3"
   const sounds = {
     rain: {
-      label: 'Rain',
-      url: 'https://cdn.pixabay.com/audio/2022/07/26/audio_124b3f2dcf.mp3'
+      label: "Rain",
+      url: process.env.PUBLIC_URL
+        ? process.env.PUBLIC_URL + "/soundscapes/rain.mp3"
+        : "/soundscapes/rain.mp3",
     },
     cafe: {
-      label: 'Café',
-      url: 'https://cdn.pixabay.com/audio/2022/08/20/audio_12bcf5ebe9.mp3'
+      label: "Café",
+      url: process.env.PUBLIC_URL
+        ? process.env.PUBLIC_URL + "/soundscapes/cafe.mp3"
+        : "/soundscapes/cafe.mp3",
     },
     forest: {
-      label: 'Forest',
-      url: 'https://cdn.pixabay.com/audio/2022/10/16/audio_124bfbac46.mp3'
-    }
+      label: "Forest",
+      url: process.env.PUBLIC_URL
+        ? process.env.PUBLIC_URL + "/soundscapes/forest.mp3"
+        : "/soundscapes/forest.mp3",
+    },
   };
 
   // Store Howl instance in ref to avoid re-renders
