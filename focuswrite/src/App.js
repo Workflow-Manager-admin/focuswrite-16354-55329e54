@@ -344,7 +344,7 @@ function App() {
             <span style={{ fontSize: 23, color: "#A3BE8C", marginBottom: 8 }}>
               <span role="img" aria-label="Soundscape">🎵</span>
             </span>
-            {/* Expanded, large labeled soundscape buttons */}
+            {/* Expanded, large labeled soundscape buttons; only Rain and Forest options */}
             <div style={{ display: "flex", flexDirection: "column", gap: 10, width: "100%" }}>
               {Object.keys(sounds).map(skey => (
                 <button
