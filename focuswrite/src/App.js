@@ -410,8 +410,8 @@ function App() {
             {/* Expanded, large labeled soundscape buttons: Rain, Forest, Waterfall */}
             <div style={{ display: "flex", flexDirection: "column", gap: 10, width: "100%" }}>
               {Object.keys(sounds).map(skey => (
+                <React.Fragment key={skey}>
                 <button
-                  key={skey}
                   className="btn btn-large"
                   title={sounds[skey].label}
                   style={{
@@ -432,7 +432,7 @@ function App() {
                   aria-label={sounds[skey].label}
                 >
                   {sounds[skey].label}
-                  {/* Optionally add icon for Waterfall */}
+                  {/* Add icon for Waterfall */}
                   {skey === "waterfall" && (
                     <span role="img" aria-label="Waterfall" style={{ marginLeft: 8, fontSize: 21 }}>💧</span>
                   )}
@@ -440,6 +440,36 @@ function App() {
                     <span style={{marginLeft: 11, fontSize: 19}} role="img" aria-label="playing">🔊</span>
                   )}
                 </button>
+                {/* If Waterfall errored, provide upload/fallback prompt below button */}
+                {skey === "waterfall" && waterfallLoadError && (
+                  <div style={{margin: "6px 0 8px 0", color: "#ffcc99", fontSize: 15, lineHeight: 1.2, textAlign: "center", background: "#1E2130", borderRadius: 7, padding: "8px 4px"}}>
+                    Could not play Waterfall sound from local or fallback source.<br />
+                    <label htmlFor="waterfall-upload" style={{ display: "block", fontWeight: 600, cursor: "pointer", margin: "7px 0" }}>
+                      Upload your own waterfall sound (MP3):
+                      <input
+                        ref={waterfallInputRef}
+                        id="waterfall-upload"
+                        type="file"
+                        accept="audio/mp3,audio/mpeg"
+                        style={{ display: "block", margin: "4px auto" }}
+                        onChange={e => {
+                          if (e.target.files && e.target.files[0]) {
+                            const file = e.target.files[0];
+                            const url = URL.createObjectURL(file);
+                            setUploadedWaterfall(url);
+                            setWaterfallLoadError(false);
+                            // Auto-play after upload
+                            setTimeout(() => handlePlaySound("waterfall"), 250);
+                          }
+                        }}
+                      />
+                    </label>
+                    <span style={{ fontSize: 13, color: "#e7e787" }}>
+                      Or, <a href={fallbackWaterfallURL} target="_blank" rel="noopener noreferrer" style={{ color: "#E8B88B" }}>try this public Waterfall MP3</a>
+                    </span>
+                  </div>
+                )}
+                </React.Fragment>
               ))}
             </div>
             <div style={{ marginTop: 8, display: "flex", gap: 12, flexDirection: "row", alignItems: "center" }}>
