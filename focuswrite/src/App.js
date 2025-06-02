@@ -20,7 +20,7 @@ function App() {
           <div className="hero">
             <div className="subtitle">AI Workflow Manager Template</div>
             
-            <h1 className="title">focuswrite</h1>
+            <h1 className="title">SerenityWrite</h1>
             
             <div className="description">
               Start building your application.
