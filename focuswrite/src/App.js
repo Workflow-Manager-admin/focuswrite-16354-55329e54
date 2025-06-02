@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './App.css';
 // Import Howler core and the Howl class for soundscape
-// eslint-disable-next-line
 import { Howl } from 'howler';
 
 /*
