@@ -181,7 +181,12 @@ body {
   word-break: break-word;
 }
 
-.print-mode .navbar, .print-mode aside, .print-mode .analytics-pill, .print-mode .btn, .print-mode .sidebar-pomodoro {
+.print-mode .navbar,
+.print-mode aside,
+.print-mode .analytics-pill,
+.print-mode .btn,
+.print-mode .sidebar-pomodoro,
+.print-mode .print-controls {
   display: none !important;
 }
 
@@ -191,12 +196,94 @@ body {
   box-shadow: none !important;
 }
 
+.print-mode section {
+  margin: 0 auto !important;
+  padding: 0 !important;
+  max-width: 720px !important;
+  min-width: 0 !important;
+  width: 100vw !important;
+  background: #fff !important;
+}
+
 .print-mode [contenteditable], .print-mode [role="textbox"] {
   background: #fff !important;
   color: #232634 !important;
   outline: none !important;
   box-shadow: none !important;
+  font-size: 1.22rem !important;
+  line-height: 1.7 !important;
+  border-radius: 0 !important;
+  font-family: 'Serif', 'Georgia', 'Times New Roman', serif !important;
+  padding: 0 !important;
 }
+
+/* Dedicated print styles */
+@media print {
+  body, .app, main, section {
+    background: #fff !important;
+    color: #232634 !important;
+    box-shadow: none !important;
+  }
+  .navbar,
+  aside,
+  .analytics-pill,
+  .sidebar-pomodoro,
+  .btn,
+  .print-controls,
+  .analytics-count,
+  .analytics-label,
+  .analytics-label,
+  .description,
+  .subtitle,
+  .print-hint,
+  [role="banner"],
+  [aria-label*="sidebar"],
+  [aria-label*="pomodoro"],
+  [aria-label*="analytics"],
+  [aria-label*="Goals"],
+  [aria-label*="streak"],
+  [role="complementary"] {
+    display: none !important;
+  }
+  main {
+    padding: 0 !important;
+  }
+  section {
+    margin: 0 auto !important;
+    padding-top: 0 !important;
+    max-width: 720px !important;
+    width: 100vw !important;
+  }
+  [contenteditable], [role="textbox"] {
+    background: #fff !important;
+    color: #232634 !important;
+    outline: none !important;
+    box-shadow: none !important;
+    font-size: 1.22rem !important;
+    line-height: 1.7 !important;
+    border-radius: 0 !important;
+    font-family: 'Serif', 'Georgia', 'Times New Roman', serif !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    min-height: 0 !important;
+  }
+  /* Remove all box-shadows and unneeded decorations */
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    background-image: none !important;
+  }
+  /* Improve print readability */
+  [contenteditable]::after,
+  [role="textbox"]::after {
+    content: none !important;
+  }
+  /* Remove scrollbars */
+  ::-webkit-scrollbar {
+    display: none !important;
+  }
+}
+
 
 .sidebar-pomodoro {
   background: #A3BE8C18;
