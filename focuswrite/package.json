@@ -2,6 +2,7 @@
   "name": "serenitywrite",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://workflow-manager-admin.github.io/focuswrite-16354-55329e54/",
   "dependencies": {
     "howler": "^2.2.4",
     "react": "^18.2.0",
