@@ -88,23 +88,119 @@ body {
   margin-bottom: 16px;
 }
 
+/* Buttons */
 .btn {
-  background-color: var(--base-light);
-  color: white;
+  background: var(--accent);
+  color: #fff;
   border: none;
-  border-radius: 4px;
-  padding: 10px 20px;
+  border-radius: 5px;
+  padding: 9px 18px;
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: background 0.18s;
+  box-shadow: 0 1px 3px rgba(25,32,46,.06);
+  outline: none;
+  border: none;
 }
 
-.btn:hover {
-  background-color: #7691ff;
+.btn:active, .btn:focus {
+  outline: 2px solid var(--accent);
+}
+
+.btn:hover:not(:disabled), .btn.btn-active {
+  background: #88c0a9;
+  color: #1A1A1A;
+}
+
+.btn:disabled {
+  opacity: 0.44;
+  cursor: not-allowed;
 }
 
 .btn-large {
-  padding: 12px 24px;
+  padding: 13px 26px;
   font-size: 1.1rem;
+}
+
+.analytics-pill {
+  background: #232634;
+  color: #A3BE8C;
+  display: flex;
+  align-items: center;
+  border-radius: 46px;
+  padding: 7px 14px 7px 13px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-right: 14px;
+  border: 1.5px solid var(--accent);
+  gap: 5px;
+  letter-spacing: 0.01em;
+}
+
+.analytics-count {
+  font-size: 1.23em;
+  font-weight: bold;
+  color: var(--accent);
+  margin: 0 2px 0 4px;
+}
+
+.analytics-label {
+  color: #b0beca;
+  font-size: 0.98em;
+}
+
+/* Writing area focus effect */
+[contenteditable="true"]:focus {
+  outline: 2.5px solid #A3BE8C !important;
+  background: #29313F;
+}
+
+[contenteditable][role="textbox"] {
+  min-height: 5em;
+  word-break: break-word;
+}
+
+.print-mode .navbar, .print-mode aside, .print-mode .analytics-pill, .print-mode .btn, .print-mode .sidebar-pomodoro {
+  display: none !important;
+}
+
+.print-mode main, .print-mode .app {
+  background: #fff !important;
+  color: #232634 !important;
+  box-shadow: none !important;
+}
+
+.print-mode [contenteditable], .print-mode [role="textbox"] {
+  background: #fff !important;
+  color: #232634 !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.sidebar-pomodoro {
+  background: #A3BE8C18;
+  border-radius: 12px;
+  padding: 10px 2px;
+  margin-bottom: 14px;
+  box-shadow: 0 1px 4px rgba(163,190,140,.09);
+  min-width: 48px;
+}
+
+@media (max-width: 900px) {
+  .container {
+    padding: 0 10px;
+  }
+  .navbar {
+    padding: 11px 6px;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background: #262b36;
+}
+::-webkit-scrollbar-thumb {
+  background: #313944;
+  border-radius: 4px;
 }
