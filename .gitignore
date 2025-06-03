@@ -5017,3 +5017,6 @@ focuswrite/build/
 node_modules/
 # Ignore soundscapes in local dev but keep tracked copies in public/ for web
 focuswrite/public/soundscapes/*.mp3
+logs/
+
+.file_activity_report.json
