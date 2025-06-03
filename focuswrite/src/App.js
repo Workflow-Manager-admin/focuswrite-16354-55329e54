@@ -92,11 +92,9 @@ function App() {
 
     let srcUrl = sounds[soundKey].url;
     // For Waterfall, prefer uploaded, then local; no more remote fallback
-    let useUploaded = false;
     if (soundKey === "waterfall") {
       if (uploadedWaterfall) {
         srcUrl = uploadedWaterfall;
-        useUploaded = true;
       }
     }
 
