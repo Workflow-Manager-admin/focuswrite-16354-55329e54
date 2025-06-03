@@ -3,6 +3,15 @@ import './App.css';
 // Import Howler core and the Howl class for soundscape
 import { Howl } from 'howler';
 
+/**
+ * Patch-2024: Improve sound playback reliability on browsers with autoplay/mute restrictions:
+ * - Ensures user-gesture requirement compliance (unlock audio via invisible interaction prompt if Howler rejects play()).
+ * - Provides error messages if playback fails.
+ * - Improves asset-path checks and gives browser policy hint.
+ * - Handles unloading of previously loaded audio sources and handles mute.
+ */
+
+
 /*
  * PUBLIC_INTERFACE
  * SerenityWrite Main Container
