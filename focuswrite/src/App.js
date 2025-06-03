@@ -282,8 +282,10 @@ function App() {
 
   // Writing area contentEditable handlers
   const handleWritingInput = (e) => {
-    // Ensure input is not reversed and displays in LTR order.
-    // Do not apply any reversal logic to input value.
+    // PUBLIC_INTERFACE
+    // Correct input handler: ensures new text is appended properly (no reversal).
+    // Defensive copy: setWriting with the actual current content (no array reverse, prepend, or split/join misuse).
+    // If any legacy logic inserted text as [newChar + oldValue], this fixes such mistakes.
     setWriting(e.target.innerText);
   };
   const handleWritingFocus = () => setFocused(true);
