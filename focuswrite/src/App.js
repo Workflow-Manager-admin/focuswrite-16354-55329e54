@@ -57,22 +57,22 @@ function App() {
       : "/soundscapes/waterfall.mp3";
   }
 
+  // --- Sound file path references ---
+  // These should point to files in /public/soundscapes/*.mp3
+  // User must supply public/soundscapes/rain.mp3, forest.mp3, and waterfall.mp3
+  const SOUNDSCAPE_PATH = "/soundscapes/";
   const sounds = {
     rain: {
       label: "Rain",
-      url: process.env.PUBLIC_URL
-        ? process.env.PUBLIC_URL + "/soundscapes/rain.mp3"
-        : "/soundscapes/rain.mp3",
+      url: SOUNDSCAPE_PATH + "rain.mp3",
     },
     forest: {
       label: "Forest",
-      url: process.env.PUBLIC_URL
-        ? process.env.PUBLIC_URL + "/soundscapes/forest.mp3"
-        : "/soundscapes/forest.mp3",
+      url: SOUNDSCAPE_PATH + "forest.mp3",
     },
     waterfall: {
       label: "Waterfall",
-      url: getWaterfallURL(),
+      url: SOUNDSCAPE_PATH + "waterfall.mp3",
     },
   };
 
