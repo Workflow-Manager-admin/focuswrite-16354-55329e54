@@ -514,6 +514,8 @@ function App() {
             <div style={{ color: "#A3BE8C", fontWeight: 600, fontSize: "1.07rem", marginBottom: 6, letterSpacing: ".04em" }}>
               Soundscapes
             </div>
+            {/* --- REQUIRED ASSET WARNING: Check that required .mp3 files exist in /public/soundscapes/ --- */}
+            <SoundscapeAssetWarning />
             {/* Audio policy error (autoplay block) display */}
             {needUserUnlock && (
               <div style={{
