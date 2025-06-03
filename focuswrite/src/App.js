@@ -34,6 +34,13 @@ function App() {
   // Print mode
   const [printMode, setPrintMode] = useState(false);
 
+  // --- PREVIEW/PRINT MODE CLARIFICATION ---
+  // SerenityWrite preview is handled through this "printMode" state,
+  // shown when user presses the 🖨️ button (labelled "Print Layout"),
+  // changing styles and hiding UI elements for clean preview/printing.
+  // If preview does not work (button unresponsive, no layout change, or display errors),
+  // the issue is likely in: printMode state, togglePrintMode, or print-mode CSS.
+
   // Only use local static waterfall sound URL
   function getWaterfallURL() {
     return process.env.PUBLIC_URL
@@ -308,6 +315,7 @@ function App() {
                 aria-label={printMode ? "Exit Print Layout" : "Enter Print Layout"}
                 title={printMode ? "Return to edit mode" : "Show clean print preview (no sidebars/controls)"}
                 style={{ minWidth: 90 }}
+                data-testid="print-preview-toggle"
               >
                 <span role="img" aria-label="Print">🖨️</span> {printMode ? "Exit Print" : "Print Layout"}
               </button>
