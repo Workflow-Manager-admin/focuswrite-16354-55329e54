@@ -508,6 +508,51 @@ function App() {
             <div style={{ color: "#A3BE8C", fontWeight: 600, fontSize: "1.07rem", marginBottom: 6, letterSpacing: ".04em" }}>
               Soundscapes
             </div>
+            {/* Audio policy error (autoplay block) display */}
+            {needUserUnlock && (
+              <div style={{
+                color: "#FFD700",
+                background: "#232634",
+                padding: "7px 10px",
+                borderRadius: "7px",
+                marginBottom: 5,
+                fontWeight: 600,
+                fontSize: "0.98em",
+                textAlign: "center"
+              }}>
+                <div>
+                  <span role="img" aria-label="Warning">🔈</span>
+                  {" "}
+                  Audio playback blocked by your browser.
+                </div>
+                <button
+                  onClick={handleUnlockAudio}
+                  style={{
+                    background: "#A3BE8C",
+                    color: "#232634",
+                    border: "2px solid #A3BE8C",
+                    borderRadius: 5,
+                    marginTop: 6,
+                    fontWeight: 600,
+                    cursor: "pointer"
+                  }}
+                >Unlock Audio</button>
+                <div style={{ marginTop: 4, fontSize: "0.93em", color: "#fff" }}>
+                  {lastAudioError}
+                </div>
+              </div>
+            )}
+            {!needUserUnlock && lastAudioError && (
+              <div style={{
+                color: "#FFD700",
+                background: "#232634",
+                padding: "6px 8px",
+                borderRadius: "7px",
+                marginBottom: 5,
+                fontWeight: 500,
+                fontSize: "0.96em"
+              }}>{lastAudioError}</div>
+            )}
             <div style={{ display: "flex", flexDirection: "row", gap: 9 }}>
               {/* Rain button with label */}
               <div style={{ display: "flex", flexDirection: "column", alignItems: "center", minWidth: 48 }}>
