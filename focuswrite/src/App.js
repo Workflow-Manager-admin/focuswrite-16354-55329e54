@@ -84,6 +84,30 @@ function App() {
   // Store Howl instance in ref to avoid re-renders
   const [howlObj, setHowlObj] = useState(null);
 
+  // UI state to show a needed "Unlock Audio" prompt if browser blocks playback due to policy
+  const [needUserUnlock, setNeedUserUnlock] = useState(false);
+
+  // For debugging, output a "last audio error" message
+  const [lastAudioError, setLastAudioError] = useState("");
+
+  // Actually unlock Howler audio by user interaction
+  const handleUnlockAudio = () => {
+    // Play+pause a silent buffer to unlock
+    const silent = new Howl({
+      src: [sounds.rain.url], // Any known good asset
+      volume: 0,
+      mute: true,
+      html5: true,
+      onend: () => {},
+    });
+    silent.once('unlock', () => {
+      setNeedUserUnlock(false);
+      setLastAudioError("");
+      silent.unload();
+    });
+    silent.play();
+  };
+
   // Soundscape handlers (Rain, Forest, and Waterfall)
   // PUBLIC_INTERFACE
   const handlePlaySound = (soundKey) => {
@@ -111,18 +135,31 @@ function App() {
         if (soundKey === "waterfall") {
           setWaterfallLoadError(true);
         }
+        setLastAudioError(`Failed to load audio source: ${srcUrl}`);
       },
       onplay: () => {
         setIsPlaying(true);
         setCurrentSound(soundKey);
+        setNeedUserUnlock(false);
+        setLastAudioError("");
       },
       onstop: () => {
         setIsPlaying(false);
         setCurrentSound(null);
       },
       onpause: () => setIsPlaying(false),
-      onplayerror: function () {
+      onplayerror: function (id, err) {
+        // Howler onplayerror is usually called if playback was blocked by browser policy
+        setNeedUserUnlock(true);
+        setIsPlaying(false);
+        setCurrentSound(null);
+        setLastAudioError(
+          "Audio cannot play until you interact with the page. Click the 'Unlock Audio' button below."
+        );
+        // Try to unlock on next interaction:
         h.once('unlock', function () {
+          setNeedUserUnlock(false);
+          setLastAudioError("");
           h.play();
         });
       }
@@ -130,7 +167,15 @@ function App() {
     setHowlObj(h);
     setIsPlaying(true);
     setWaterfallLoadError(false);
-    h.play();
+
+    try {
+      h.play();
+    } catch (err) {
+      setNeedUserUnlock(true);
+      setLastAudioError(
+        "Browser blocked playback. Please interact with the page (click button) to unlock audio."
+      );
+    }
   };
 
   // PUBLIC_INTERFACE
