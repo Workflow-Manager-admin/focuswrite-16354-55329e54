@@ -78,62 +78,50 @@ function App() {
   // Soundscape handlers (Rain, Forest, and Waterfall)
   // PUBLIC_INTERFACE
   const handlePlaySound = (soundKey) => {
-    // If the same soundscape is "active", just resume if paused; otherwise switch
-    if (currentSound === soundKey && howlObj && !isPlaying) {
-      howlObj.play();
-      setIsPlaying(true);
-      return;
-    }
-    // Stop any currently playing soundscape
+    // Always stop/clean up any previous Howl before starting new
     if (howlObj) {
       howlObj.stop();
+      howlObj.unload();
       setHowlObj(null);
     }
 
     let srcUrl = sounds[soundKey].url;
-    // For Waterfall, prefer uploaded, then local; no more remote fallback
-    if (soundKey === "waterfall") {
-      if (uploadedWaterfall) {
-        srcUrl = uploadedWaterfall;
-      }
+    if (soundKey === "waterfall" && uploadedWaterfall) {
+      srcUrl = uploadedWaterfall;
     }
 
-    const playSound = (url) => {
-      const h = new Howl({
-        src: [url],
-        volume,
-        loop: true,
-        html5: true,
-        onend: () => setIsPlaying(false),
-        onloaderror: (id, err) => {
-          if (soundKey === "waterfall") {
-            // File missing or invalid: show a clear message
-            setWaterfallLoadError(true);
-          }
-        },
-        onplay: () => {
-          setIsPlaying(true);
-          setCurrentSound(soundKey);
-        },
-        onstop: () => {
-          setIsPlaying(false);
-          setCurrentSound(null);
-        },
-        onpause: () => setIsPlaying(false),
-        onplayerror: function () {
-          h.once('unlock', function () {
-            h.play();
-          });
-        }
-      });
-      setHowlObj(h);
-      setCurrentSound(soundKey);
-      setIsPlaying(true);
-      setWaterfallLoadError(false);
-      h.play();
-    };
+    setCurrentSound(soundKey); // To highlight correct button immediately
 
-    playSound(srcUrl);
+    const h = new Howl({
+      src: [srcUrl],
+      volume,
+      loop: true,
+      html5: true,
+      onend: () => setIsPlaying(false),
+      onloaderror: (id, err) => {
+        if (soundKey === "waterfall") {
+          setWaterfallLoadError(true);
+        }
+      },
+      onplay: () => {
+        setIsPlaying(true);
+        setCurrentSound(soundKey);
+      },
+      onstop: () => {
+        setIsPlaying(false);
+        setCurrentSound(null);
+      },
+      onpause: () => setIsPlaying(false),
+      onplayerror: function () {
+        h.once('unlock', function () {
+          h.play();
+        });
+      }
+    });
+    setHowlObj(h);
+    setIsPlaying(true);
+    setWaterfallLoadError(false);
+    h.play();
   };
 
   // PUBLIC_INTERFACE
@@ -664,66 +652,82 @@ function App() {
                     ? "Focus"
                     : "Idle"}
               </div>
-              <div style={{ display: "flex", flexDirection: "row", gap: 10 }}>
+              <div style={{ display: "flex", flexDirection: "row", gap: 5 }}>
                 {pomodoroStatus === "idle" || pomodoroStatus === "paused" ? (
                   <button
                     className="btn"
                     style={{
-                      padding: "7px 16px",
+                      padding: "4px 9px",
                       fontWeight: 500,
                       background: "#A3BE8C",
                       color: "#232634",
-                      border: "2px solid #A3BE8C"
+                      border: "2px solid #A3BE8C",
+                      fontSize: "0.96em",
+                      minWidth: 28,
+                      minHeight: 28,
+                      borderRadius: 7,
                     }}
                     onClick={handleStartPomodoro}
                     aria-label="Start Pomodoro"
                   >
-                    ▶️ Start
+                    ▶️
                   </button>
                 ) : (
                   <button
                     className="btn"
                     style={{
-                      padding: "7px 16px",
+                      padding: "4px 9px",
                       fontWeight: 500,
                       background: "#EBCB8B",
                       color: "#232634",
-                      border: "2px solid #EBCB8B"
+                      border: "2px solid #EBCB8B",
+                      fontSize: "0.96em",
+                      minWidth: 28,
+                      minHeight: 28,
+                      borderRadius: 7,
                     }}
                     onClick={handlePausePomodoro}
                     aria-label="Pause Pomodoro"
                   >
-                    ⏸️ Pause
+                    ⏸️
                   </button>
                 )}
                 <button
                   className="btn"
                   style={{
-                    padding: "7px 15px",
+                    padding: "4px 8px",
                     fontWeight: 450,
                     background: "#232634",
                     color: "#fff",
-                    border: "1.5px solid #A3BE8C"
+                    border: "1.5px solid #A3BE8C",
+                    fontSize: "0.96em",
+                    minWidth: 28,
+                    minHeight: 28,
+                    borderRadius: 7,
                   }}
                   onClick={handleResetPomodoro}
                   aria-label="Reset Pomodoro"
                 >
-                  🔄 Reset
+                  🔄
                 </button>
                 {pomodoroStatus !== "break" && (
                   <button
                     className="btn"
                     style={{
-                      padding: "7px 14px",
+                      padding: "4px 8px",
                       fontWeight: 450,
                       background: "#8FBCBB",
                       color: "#232634",
-                      border: "2px solid #8FBCBB"
+                      border: "2px solid #8FBCBB",
+                      fontSize: "0.96em",
+                      minWidth: 28,
+                      minHeight: 28,
+                      borderRadius: 7,
                     }}
                     onClick={handleBreakPomodoro}
                     aria-label="Start Break"
                   >
-                    ☕ Break
+                    ☕
                   </button>
                 )}
               </div>
