@@ -284,26 +284,15 @@ function App() {
 
   // PUBLIC_INTERFACE
   /**
-   * Handles input in the writing area. Fixes common reversal bugs:
-   * - Ensures no reversal occurs (no split('').reverse().join(''), no [newChar + oldValue]).
-   * - Always appends/updates text as typed, preserving normal order.
-   * - Trims Windows-style line endings and redundant formatting code.
-   * - Defensive: will only update with current visible text.
+   * Handles input in the writing area.
+   * Ensures that typed characters are appended at the end, not at the start or in reverse.
+   * Maintains normal writing order and state.
    */
   const handleWritingInput = (e) => {
     // Get plain text from editable div
     let inputText = e.target.innerText;
-    // Remove any accidental explicit array reversal (if legacy dev introduced split/reverse/join, they don't exist here)
-    // Defensive: Disallow legacy code that would reverse text by mistake
-    if (typeof inputText === 'string') {
-      // heuristic for accidental reversal legacy (very fast palindrome on short entry)
-      const reversed = inputText.split('').reverse().join('');
-      // If previous state was reversed this session, auto correct (rare, but for safety)
-      if (writing && writing.length === inputText.length && writing === reversed) {
-        setWriting(reversed); // Corrects the bug and puts it right
-        return;
-      }
-    }
+
+    // Force the writing value to match the normal (non-reversed) input
     setWriting(inputText);
   };
   const handleWritingFocus = () => setFocused(true);
@@ -982,7 +971,7 @@ function App() {
                 MozUserSelect: "text",
                 msUserSelect: "text",
                 userSelect: "text",
-                backgroundClip: "padding-box" // for appearance
+                backgroundClip: "padding-box"
               }}
               contentEditable={!printMode}
               suppressContentEditableWarning={true}
@@ -995,12 +984,11 @@ function App() {
               onBlur={handleWritingBlur}
               onPaste={e => {
                 e.preventDefault();
-                // Strip HTML formatting and paste as plain text only!
+                // Always paste as plain text
                 const text = e.clipboardData.getData('text/plain');
                 document.execCommand('insertText', false, text);
               }}
               onDrop={e => {
-                // Prevent dropping files/images
                 if (e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files.length > 0) {
                   e.preventDefault();
                   return false;
@@ -1012,8 +1000,8 @@ function App() {
               aria-autocomplete="none"
               data-testid="writing-area-contenteditable"
             >
-              {/* No more placeholder span as a child */}
-              {writing.length > 0 ? writing : null}
+              {/* Display writing as-is, do NOT reverse or manipulate order */}
+              {writing}
             </div>
           </div>
           {/* Session Analytics and Pomodoro */}
