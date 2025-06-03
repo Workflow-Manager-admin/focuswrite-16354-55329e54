@@ -1,8 +1,0 @@
-[INSTRUCTION]
-Place your audio files (rain.mp3, forest.mp3, waterfall.mp3) here.
-
-• "rain.mp3" – gentle rain sound
-• "forest.mp3" – calming forest ambiance
-• "waterfall.mp3" – soft waterfall noise
-
-Files must be named exactly and placed in this folder for soundscape playback in SerenityWrite.

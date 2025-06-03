@@ -282,6 +282,8 @@ function App() {
 
   // Writing area contentEditable handlers
   const handleWritingInput = (e) => {
+    // Ensure input is not reversed and displays in LTR order.
+    // Do not apply any reversal logic to input value.
     setWriting(e.target.innerText);
   };
   const handleWritingFocus = () => setFocused(true);
