@@ -9,6 +9,16 @@ This project provides a minimal React template for SerenityWrite—a clean, mode
 - **Fast**: Minimal dependencies for quick loading times
 - **Simple**: Easy to understand and modify
 
+## Preview/Print Layout
+SerenityWrite shifts into a "Print Layout" preview mode via the 🖨️ button in the interface. This clean preview renders your writing as it would appear exported/printed, hiding sidebars, controls, and switching to pure black-on-white typography. 
+
+**To preview your writing:**  
+- Use the "Print Layout" or "🖨️ Print" button in the top navigation bar.
+- The writing area updates visually to show how the exported/printed text will appear.
+- Click "Exit Print" or the same button to return to editing mode.
+
+If you encounter problems (e.g., button does nothing, preview is broken, not all content appears, controls are not hidden), please check for errors in the browser console or verify you’re using a supported browser.
+
 ## Getting Started
 
 In the project directory, you can run:
