@@ -476,65 +476,84 @@ function App() {
           alignItems: "center",
           padding: "30px 0"
         }}>
-          <div
-            ref={writingRef}
-            style={{
-              maxWidth: 720,
-              width: "100%",
-              minHeight: 360,
-              background: printMode ? "#fff" : "#262b36",
-              color: printMode ? "#232634" : "#fff",
-              borderRadius: 16,
-              boxShadow: printMode ? "none" : (focused ? "0 0 0 2.5px #A3BE8C" : "0 2px 18px rgba(44,53,72,0.09)"),
-              padding: "40px 32px",
-              fontSize: "1.25rem",
-              lineHeight: 1.7,
-              marginBottom: 18,
-              outline: printMode ? "none" : (focused ? "2.5px solid #A3BE8C" : "2px solid #313944"),
-              transition: "outline-color 0.2s",
-              resize: !printMode ? "vertical" : "none",
-              overflowY: "auto",
-              fontFamily: "inherit",
-              wordBreak: "break-word",
-              WebkitUserSelect: "text",
-              MozUserSelect: "text",
-              msUserSelect: "text",
-              userSelect: "text",
-            }}
-            contentEditable={!printMode}
-            suppressContentEditableWarning={true}
-            spellCheck={true}
-            aria-label="SerenityWrite main writing area"
-            aria-multiline="true"
-            tabIndex={0}
-            onInput={handleWritingInput}
-            onFocus={handleWritingFocus}
-            onBlur={handleWritingBlur}
-            onPaste={e => {
-              e.preventDefault();
-              // Strip HTML formatting and paste as plain text only!
-              const text = e.clipboardData.getData('text/plain');
-              document.execCommand('insertText', false, text);
-            }}
-            onDrop={e => {
-              // Prevent dropping files/images
-              if (e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files.length > 0) {
-                e.preventDefault();
-                return false;
-              }
-              return true;
-            }}
-            role="textbox"
-            aria-live="polite"
-            aria-autocomplete="none"
-          >
-            {writing.length === 0 && !printMode && (
-              <span style={{ opacity: 0.36, fontStyle: "italic", userSelect: "none", pointerEvents: "none" }}>
+          <div style={{ position: "relative", width: "100%", maxWidth: 720 }}>
+            {/* Placeholder is now a positioned sibling (not child) */}
+            {!printMode && writing.length === 0 && (
+              <span
+                style={{
+                  position: "absolute",
+                  top: 40,
+                  left: 32,
+                  pointerEvents: "none",
+                  opacity: 0.36,
+                  fontStyle: "italic",
+                  color: "#fff",
+                  userSelect: "none",
+                  zIndex: 2
+                }}
+                aria-hidden="true"
+                data-testid="writing-area-placeholder"
+              >
                 [ Start writing here... ]
               </span>
             )}
-            {/* Only display the value as plain text nodes */}
-            {writing.length > 0 && writing}
+            <div
+              ref={writingRef}
+              style={{
+                maxWidth: 720,
+                width: "100%",
+                minHeight: 360,
+                background: printMode ? "#fff" : "#262b36",
+                color: printMode ? "#232634" : "#fff",
+                borderRadius: 16,
+                boxShadow: printMode ? "none" : (focused ? "0 0 0 2.5px #A3BE8C" : "0 2px 18px rgba(44,53,72,0.09)"),
+                padding: "40px 32px",
+                fontSize: "1.25rem",
+                lineHeight: 1.7,
+                marginBottom: 18,
+                outline: printMode ? "none" : (focused ? "2.5px solid #A3BE8C" : "2px solid #313944"),
+                transition: "outline-color 0.2s",
+                resize: !printMode ? "vertical" : "none",
+                overflowY: "auto",
+                fontFamily: "inherit",
+                wordBreak: "break-word",
+                WebkitUserSelect: "text",
+                MozUserSelect: "text",
+                msUserSelect: "text",
+                userSelect: "text",
+                backgroundClip: "padding-box" // for appearance
+              }}
+              contentEditable={!printMode}
+              suppressContentEditableWarning={true}
+              spellCheck={true}
+              aria-label="SerenityWrite main writing area"
+              aria-multiline="true"
+              tabIndex={0}
+              onInput={handleWritingInput}
+              onFocus={handleWritingFocus}
+              onBlur={handleWritingBlur}
+              onPaste={e => {
+                e.preventDefault();
+                // Strip HTML formatting and paste as plain text only!
+                const text = e.clipboardData.getData('text/plain');
+                document.execCommand('insertText', false, text);
+              }}
+              onDrop={e => {
+                // Prevent dropping files/images
+                if (e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files.length > 0) {
+                  e.preventDefault();
+                  return false;
+                }
+                return true;
+              }}
+              role="textbox"
+              aria-live="polite"
+              aria-autocomplete="none"
+              data-testid="writing-area-contenteditable"
+            >
+              {/* No more placeholder span as a child */}
+              {writing.length > 0 ? writing : null}
+            </div>
           </div>
           {/* Session Analytics and Pomodoro */}
           <div style={{
