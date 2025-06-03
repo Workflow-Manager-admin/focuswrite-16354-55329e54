@@ -4,13 +4,13 @@ import './index.css';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 
-// Wrap the App inside BrowserRouter with the correct basename for GitHub Pages deployment
+// Wrap the App inside BrowserRouter for correct routing at root deployment
 const rootElement = document.getElementById('root');
 if (rootElement) {
   const root = ReactDOM.createRoot(rootElement);
   root.render(
     <React.StrictMode>
-      <BrowserRouter basename="/focuswrite-16354-55329e54">
+      <BrowserRouter>
         <App />
       </BrowserRouter>
     </React.StrictMode>
