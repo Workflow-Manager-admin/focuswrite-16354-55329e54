@@ -580,7 +580,7 @@ function App() {
               Soundscapes
             </div>
             {/* --- REQUIRED ASSET WARNING: Check that required .mp3 files exist in /public/soundscapes/ --- */}
-            <SoundscapeAssetWarning />
+            {/* <SoundscapeAssetWarning /> */}
             {/* Audio policy error (autoplay block) display */}
             {needUserUnlock && (
               <div style={{
