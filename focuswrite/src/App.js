@@ -459,13 +459,221 @@ function App() {
           gap: 24,
           minHeight: "100%",
         }} aria-label="Sidebar">
-          {/* ... as before ... */}
-          {/* [Sidebar code unchanged for brevity] */}
-          {/* (Insert original sidebar, soundscapes, controls) */}
-          {/* --- SNIP --- */}
-          {/* ...full sidebar code unchanged... */}
-          {/* --- SNIP --- */}
-          {/* (Sidebar end) */}
+          {/* SIDEBAR: Soundscapes and Pomodoro controls */}
+
+          {/* Soundscapes Section */}
+          <div style={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center", gap: 18 }}>
+            <div style={{ color: "#A3BE8C", fontWeight: 600, fontSize: "1.07rem", marginBottom: 6, letterSpacing: ".04em" }}>
+              Soundscapes
+            </div>
+            <div style={{ display: "flex", flexDirection: "row", gap: 9 }}>
+              {/* Rain button */}
+              <button
+                className="btn"
+                style={{
+                  background: currentSound === "rain" ? "#A3BE8C" : "#232634",
+                  color: currentSound === "rain" ? "#232634" : "#fff",
+                  border: currentSound === "rain" ? "2px solid #A3BE8C" : "1.5px solid #333",
+                  fontWeight: 500,
+                  transition: "all 0.18s",
+                  minWidth: 46,
+                  boxShadow: "none"
+                }}
+                aria-label="Play Rain soundscape"
+                title="Rain sound"
+                onClick={() => handlePlaySound("rain")}
+              >🌧️</button>
+
+              {/* Forest button */}
+              <button
+                className="btn"
+                style={{
+                  background: currentSound === "forest" ? "#A3BE8C" : "#232634",
+                  color: currentSound === "forest" ? "#232634" : "#fff",
+                  border: currentSound === "forest" ? "2px solid #A3BE8C" : "1.5px solid #333",
+                  fontWeight: 500,
+                  transition: "all 0.18s",
+                  minWidth: 46,
+                  boxShadow: "none"
+                }}
+                aria-label="Play Forest soundscape"
+                title="Forest sound"
+                onClick={() => handlePlaySound("forest")}
+              >🌲</button>
+
+              {/* Waterfall button */}
+              <button
+                className="btn"
+                style={{
+                  background: currentSound === "waterfall" ? "#A3BE8C" : "#232634",
+                  color: currentSound === "waterfall" ? "#232634" : "#fff",
+                  border: currentSound === "waterfall" ? "2px solid #A3BE8C" : "1.5px solid #333",
+                  fontWeight: 500,
+                  transition: "all 0.18s",
+                  minWidth: 46,
+                  boxShadow: "none"
+                }}
+                aria-label="Play Waterfall soundscape"
+                title="Waterfall sound"
+                onClick={() => handlePlaySound("waterfall")}
+              >💧</button>
+            </div>
+            {/* Play/Pause/Stop/Volume for soundscapes */}
+            <div style={{ marginTop: 9, display: "flex", flexDirection: "row", gap: 10, alignItems: "center" }}>
+              <button
+                className="btn"
+                style={{
+                  padding: "5px 14px",
+                  background: isPlaying ? "#A3BE8C" : "#232634",
+                  color: isPlaying ? "#232634" : "#fff",
+                  border: isPlaying ? "2px solid #A3BE8C" : "1.5px solid #333",
+                  fontSize: "1em"
+                }}
+                aria-label={isPlaying ? "Pause soundscape" : "Play soundscape"}
+                onClick={handleToggleSound}
+                disabled={!howlObj}
+                title={isPlaying ? "Pause" : "Play"}
+              >
+                {isPlaying ? "⏸️" : "▶️"}
+              </button>
+              <button
+                className="btn"
+                style={{
+                  padding: "5px 10px",
+                  background: "#232634",
+                  color: "#fff",
+                  border: "1.5px solid #333",
+                  fontSize: "1em"
+                }}
+                aria-label="Stop soundscape"
+                onClick={handleStopSound}
+                disabled={!howlObj}
+                title="Stop"
+              >
+                ⏹️
+              </button>
+              <input
+                type="range"
+                min={0}
+                max={1}
+                step={0.01}
+                value={volume}
+                onChange={handleChangeVolume}
+                style={{ width: 58, accentColor: "#A3BE8C" }}
+                aria-label="Soundscapes volume"
+                title="Volume"
+              />
+            </div>
+            {/* Waterfall upload error helper */}
+            {waterfallLoadError && (
+              <div style={{ color: "#D08770", fontSize: "0.97em", marginTop: 4, textAlign: "center" }}>
+                Sound not found or invalid for Waterfall. Try another file.
+              </div>
+            )}
+          </div>
+
+          {/* Pomodoro Section */}
+          <div className="sidebar-pomodoro" style={{
+              marginTop: 32,
+              width: "90%",
+              background: "#A3BE8C18",
+              borderRadius: 12,
+              padding: "18px 7px 14px 7px",
+              boxShadow: "0 1px 4px rgba(163,190,140,.09)"
+          }}>
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 15 }}>
+              <div style={{
+                color: pomodoroMode === "break" ? "#8FBCBB" : "#B48EAD",
+                fontWeight: 600,
+                fontSize: "1.08rem",
+                marginBottom: 5
+              }}>
+                Pomodoro Timer
+              </div>
+              <div style={{
+                fontSize: 29,
+                fontFamily: "monospace",
+                color: pomodoroMode === "break" ? "#8FBCBB" : "#EBCB8B",
+                fontWeight: 700
+              }}>
+                {formatTime(timer)}
+              </div>
+              <div style={{
+                fontSize: "1em",
+                color: pomodoroMode === "break" ? "#8FBCBB" : "#A3BE8C",
+                marginBottom: 4
+              }}>
+                {pomodoroMode === "break"
+                  ? "Break"
+                  : pomodoroMode === "focus"
+                    ? "Focus"
+                    : "Idle"}
+              </div>
+              <div style={{ display: "flex", flexDirection: "row", gap: 10 }}>
+                {pomodoroStatus === "idle" || pomodoroStatus === "paused" ? (
+                  <button
+                    className="btn"
+                    style={{
+                      padding: "7px 16px",
+                      fontWeight: 500,
+                      background: "#A3BE8C",
+                      color: "#232634",
+                      border: "2px solid #A3BE8C"
+                    }}
+                    onClick={handleStartPomodoro}
+                    aria-label="Start Pomodoro"
+                  >
+                    ▶️ Start
+                  </button>
+                ) : (
+                  <button
+                    className="btn"
+                    style={{
+                      padding: "7px 16px",
+                      fontWeight: 500,
+                      background: "#EBCB8B",
+                      color: "#232634",
+                      border: "2px solid #EBCB8B"
+                    }}
+                    onClick={handlePausePomodoro}
+                    aria-label="Pause Pomodoro"
+                  >
+                    ⏸️ Pause
+                  </button>
+                )}
+                <button
+                  className="btn"
+                  style={{
+                    padding: "7px 15px",
+                    fontWeight: 450,
+                    background: "#232634",
+                    color: "#fff",
+                    border: "1.5px solid #A3BE8C"
+                  }}
+                  onClick={handleResetPomodoro}
+                  aria-label="Reset Pomodoro"
+                >
+                  🔄 Reset
+                </button>
+                {pomodoroStatus !== "break" && (
+                  <button
+                    className="btn"
+                    style={{
+                      padding: "7px 14px",
+                      fontWeight: 450,
+                      background: "#8FBCBB",
+                      color: "#232634",
+                      border: "2px solid #8FBCBB"
+                    }}
+                    onClick={handleBreakPomodoro}
+                    aria-label="Start Break"
+                  >
+                    ☕ Break
+                  </button>
+                )}
+              </div>
+            </div>
+          </div>
         </aside>
 
         {/* Writing Area (center) */}
