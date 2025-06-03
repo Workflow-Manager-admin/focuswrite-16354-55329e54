@@ -39,6 +39,18 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 ## Customization
 
+### Soundscapes Setup
+
+To use the Rain, Forest, and Waterfall soundscapes, you must provide the following .mp3 files in the `public/soundscapes/` directory of this project:
+
+- `rain.mp3`
+- `forest.mp3`
+- `waterfall.mp3`
+
+If these files are missing, a warning appears and sound playback will not work. Obtain or create your own calming ambient .mp3 files, then copy them to `public/soundscapes/`.
+
+If you deploy to static hosting (Netlify, GitHub Pages etc), make sure the files are present and pushed.
+
 ### Colors
 
 The main brand colors are defined as CSS variables in `src/App.css`:

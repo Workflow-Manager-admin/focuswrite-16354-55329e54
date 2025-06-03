@@ -4,6 +4,71 @@ import './App.css';
 import { Howl } from 'howler';
 
 /**
+ * Checks if required soundscape .mp3 assets exist in /public/soundscapes.
+ * Shows user warning if any are missing.
+ * PUBLIC_INTERFACE
+ */
+function SoundscapeAssetWarning() {
+  const REQUIRED_FILES = [
+    { name: "Rain", file: "/soundscapes/rain.mp3" },
+    { name: "Forest", file: "/soundscapes/forest.mp3" },
+    { name: "Waterfall", file: "/soundscapes/waterfall.mp3" }
+  ];
+  const [existMap, setExistMap] = React.useState({});
+  React.useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      const results = {};
+      for (let snd of REQUIRED_FILES) {
+        try {
+          const resp = await fetch(snd.file, { method: "HEAD" });
+          results[snd.file] = resp.ok;
+        } catch {
+          results[snd.file] = false;
+        }
+      }
+      if (!cancelled) setExistMap(results);
+    })();
+    return () => { cancelled = true; };
+  }, []);
+  const missing = REQUIRED_FILES.filter(snd => existMap[snd.file] === false);
+  if (missing.length > 0) {
+    return (
+      <div style={{
+        color: "#ffb700",
+        background: "#443",
+        padding: "8px 10px",
+        borderRadius: 8,
+        marginBottom: 7,
+        fontWeight: 600,
+        fontSize: "0.99em",
+        border: "1.5px solid #D08770",
+        maxWidth: 180,
+        textAlign: "center",
+        lineHeight: 1.45
+      }}>
+        <div>
+          <span role="img" aria-label="Error">⚠️</span>
+          {" "}
+          <b>Soundscape audio not available.</b>
+        </div>
+        <div style={{ fontWeight: 400, marginTop: 3, fontSize: "0.96em" }}>
+          Please upload or copy these .mp3 files to <br />
+          <code style={{ background: "#222", color: "#fff", borderRadius: 4, padding: "1px 4px" }}>/public/soundscapes/</code>:
+          <ul style={{ textAlign: "left", margin: "8px 0 2px 18px", fontSize: "0.97em", color: "#FFD700", listStyleType: "disc" }}>
+            {missing.map(f => <li key={f.file}>{f.name}: <code>{f.file.replace("/soundscapes/", "")}</code></li>)}
+          </ul>
+          <span style={{ color: "#ccc", fontWeight: 400, fontSize: "0.93em" }}>
+            App expects assets: <b>rain.mp3</b>, <b>forest.mp3</b>, <b>waterfall.mp3</b>.
+          </span>
+        </div>
+      </div>
+    );
+  }
+  return null;
+}
+
+/**
  * Patch-2024: Improve sound playback reliability on browsers with autoplay/mute restrictions:
  * - Ensures user-gesture requirement compliance (unlock audio via invisible interaction prompt if Howler rejects play()).
  * - Provides error messages if playback fails.
