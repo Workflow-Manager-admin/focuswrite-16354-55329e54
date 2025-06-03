@@ -6,14 +6,9 @@ cd "$(dirname "$0")"
 git add -A
 
 # Compose a descriptive commit message
-git commit -m "Update: Commit all recent changes for FocusWrite
-- Updated or newly added soundscape MP3 assets under public/soundscapes
-- Build/deployment scripts, post_process_status, and config updates
-- Documentation updates (requirements, MP3 asset check report)
-- Any other recent minor fixes
-"
+git commit -m "Fix writing area input reversal, ensure contentEditable is controlled and synced, restore soundscape audio playback, update soundscape button styles/names, and restore Pomodoro/sidebar UI. General enhancements and bugfixes."
 
 # Push to specified branch
-git push origin cga-cgc7b2d135
+git push origin cga-cg38e77e59
 
-echo "All changes staged, committed, and pushed to 'cga-cgc7b2d135'."
+echo "All changes staged, committed, and pushed to 'cga-cg38e77e59'."
