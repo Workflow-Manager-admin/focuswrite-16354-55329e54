@@ -467,56 +467,111 @@ function App() {
               Soundscapes
             </div>
             <div style={{ display: "flex", flexDirection: "row", gap: 9 }}>
-              {/* Rain button */}
-              <button
-                className="btn"
-                style={{
-                  background: currentSound === "rain" ? "#A3BE8C" : "#232634",
-                  color: currentSound === "rain" ? "#232634" : "#fff",
-                  border: currentSound === "rain" ? "2px solid #A3BE8C" : "1.5px solid #333",
+              {/* Rain button with label */}
+              <div style={{ display: "flex", flexDirection: "column", alignItems: "center", minWidth: 48 }}>
+                <button
+                  className="btn"
+                  style={{
+                    background: currentSound === "rain" ? "#A3BE8C" : "#232634",
+                    color: currentSound === "rain" ? "#232634" : "#fff",
+                    border: currentSound === "rain" ? "2px solid #A3BE8C" : "1.5px solid #333",
+                    fontWeight: 500,
+                    transition: "all 0.18s",
+                    minWidth: 32,
+                    minHeight: 32,
+                    maxHeight: 38,
+                    padding: "6px 10px",
+                    borderRadius: 8,
+                    boxShadow: "none",
+                    fontSize: "1.18rem",
+                  }}
+                  aria-label="Play Rain soundscape"
+                  title="Rain sound"
+                  onClick={() => handlePlaySound("rain")}
+                  tabIndex={0}
+                >🌧️</button>
+                <div style={{
+                  marginTop: 2,
+                  fontSize: "0.93em",
+                  color: currentSound === "rain" ? "#A3BE8C" : "#b0beca",
+                  textAlign: "center",
                   fontWeight: 500,
-                  transition: "all 0.18s",
-                  minWidth: 46,
-                  boxShadow: "none"
-                }}
-                aria-label="Play Rain soundscape"
-                title="Rain sound"
-                onClick={() => handlePlaySound("rain")}
-              >🌧️</button>
-
-              {/* Forest button */}
-              <button
-                className="btn"
-                style={{
-                  background: currentSound === "forest" ? "#A3BE8C" : "#232634",
-                  color: currentSound === "forest" ? "#232634" : "#fff",
-                  border: currentSound === "forest" ? "2px solid #A3BE8C" : "1.5px solid #333",
+                  minHeight: 17,
+                  lineHeight: "1.1"
+                }}>
+                  Rain
+                </div>
+              </div>
+              {/* Forest button with label */}
+              <div style={{ display: "flex", flexDirection: "column", alignItems: "center", minWidth:48 }}>
+                <button
+                  className="btn"
+                  style={{
+                    background: currentSound === "forest" ? "#A3BE8C" : "#232634",
+                    color: currentSound === "forest" ? "#232634" : "#fff",
+                    border: currentSound === "forest" ? "2px solid #A3BE8C" : "1.5px solid #333",
+                    fontWeight: 500,
+                    transition: "all 0.18s",
+                    minWidth: 32,
+                    minHeight: 32,
+                    maxHeight: 38,
+                    padding: "6px 10px",
+                    borderRadius: 8,
+                    boxShadow: "none",
+                    fontSize: "1.18rem",
+                  }}
+                  aria-label="Play Forest soundscape"
+                  title="Forest sound"
+                  onClick={() => handlePlaySound("forest")}
+                  tabIndex={0}
+                >🌲</button>
+                <div style={{
+                  marginTop: 2,
+                  fontSize: "0.93em",
+                  color: currentSound === "forest" ? "#A3BE8C" : "#b0beca",
+                  textAlign: "center",
                   fontWeight: 500,
-                  transition: "all 0.18s",
-                  minWidth: 46,
-                  boxShadow: "none"
-                }}
-                aria-label="Play Forest soundscape"
-                title="Forest sound"
-                onClick={() => handlePlaySound("forest")}
-              >🌲</button>
-
-              {/* Waterfall button */}
-              <button
-                className="btn"
-                style={{
-                  background: currentSound === "waterfall" ? "#A3BE8C" : "#232634",
-                  color: currentSound === "waterfall" ? "#232634" : "#fff",
-                  border: currentSound === "waterfall" ? "2px solid #A3BE8C" : "1.5px solid #333",
+                  minHeight: 17,
+                  lineHeight: "1.1"
+                }}>
+                  Forest
+                </div>
+              </div>
+              {/* Waterfall button with label */}
+              <div style={{ display: "flex", flexDirection: "column", alignItems: "center", minWidth:48 }}>
+                <button
+                  className="btn"
+                  style={{
+                    background: currentSound === "waterfall" ? "#A3BE8C" : "#232634",
+                    color: currentSound === "waterfall" ? "#232634" : "#fff",
+                    border: currentSound === "waterfall" ? "2px solid #A3BE8C" : "1.5px solid #333",
+                    fontWeight: 500,
+                    transition: "all 0.18s",
+                    minWidth: 32,
+                    minHeight: 32,
+                    maxHeight: 38,
+                    padding: "6px 10px",
+                    borderRadius: 8,
+                    boxShadow: "none",
+                    fontSize: "1.18rem",
+                  }}
+                  aria-label="Play Waterfall soundscape"
+                  title="Waterfall sound"
+                  onClick={() => handlePlaySound("waterfall")}
+                  tabIndex={0}
+                >💧</button>
+                <div style={{
+                  marginTop: 2,
+                  fontSize: "0.93em",
+                  color: currentSound === "waterfall" ? "#A3BE8C" : "#b0beca",
+                  textAlign: "center",
                   fontWeight: 500,
-                  transition: "all 0.18s",
-                  minWidth: 46,
-                  boxShadow: "none"
-                }}
-                aria-label="Play Waterfall soundscape"
-                title="Waterfall sound"
-                onClick={() => handlePlaySound("waterfall")}
-              >💧</button>
+                  minHeight: 17,
+                  lineHeight: "1.1"
+                }}>
+                  Waterfall
+                </div>
+              </div>
             </div>
             {/* Play/Pause/Stop/Volume for soundscapes */}
             <div style={{ marginTop: 9, display: "flex", flexDirection: "row", gap: 10, alignItems: "center" }}>
