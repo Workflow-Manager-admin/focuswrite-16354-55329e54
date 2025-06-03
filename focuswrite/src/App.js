@@ -123,6 +123,9 @@ function App() {
       srcUrl = uploadedWaterfall;
     }
 
+    // Asset debugging log: output which asset will be loaded for soundscape.
+    console.log(`[SOUND DEBUG] Playing sound: ${soundKey}, path: ${srcUrl}`);
+
     setCurrentSound(soundKey); // To highlight correct button immediately
 
     const h = new Howl({
@@ -136,12 +139,14 @@ function App() {
           setWaterfallLoadError(true);
         }
         setLastAudioError(`Failed to load audio source: ${srcUrl}`);
+        console.error(`[SOUND DEBUG] Failed to load audio (${soundKey}): ${srcUrl}`, err);
       },
       onplay: () => {
         setIsPlaying(true);
         setCurrentSound(soundKey);
         setNeedUserUnlock(false);
         setLastAudioError("");
+        console.log(`[SOUND DEBUG] Playback started: ${soundKey}`);
       },
       onstop: () => {
         setIsPlaying(false);
@@ -156,6 +161,7 @@ function App() {
         setLastAudioError(
           "Audio cannot play until you interact with the page. Click the 'Unlock Audio' button below."
         );
+        console.warn("[SOUND DEBUG] onplayerror", err);
         // Try to unlock on next interaction:
         h.once('unlock', function () {
           setNeedUserUnlock(false);
