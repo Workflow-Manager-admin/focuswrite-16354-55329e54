@@ -979,7 +979,12 @@ function App() {
               aria-label="SerenityWrite main writing area"
               aria-multiline="true"
               tabIndex={0}
-              onInput={handleWritingInput}
+              onInput={e => {
+                // Only update state from direct user input.
+                if (!printMode) {
+                  setWriting(e.currentTarget.innerText);
+                }
+              }}
               onFocus={handleWritingFocus}
               onBlur={handleWritingBlur}
               onPaste={e => {
@@ -999,10 +1004,7 @@ function App() {
               aria-live="polite"
               aria-autocomplete="none"
               data-testid="writing-area-contenteditable"
-            >
-              {/* Display writing as-is, do NOT reverse or manipulate order */}
-              {writing}
-            </div>
+            ></div>
           </div>
           {/* Session Analytics and Pomodoro */}
           <div style={{
