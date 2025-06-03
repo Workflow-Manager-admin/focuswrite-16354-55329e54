@@ -175,7 +175,18 @@ function App() {
   const handleWritingBlur = () => setFocused(false);
 
   // Print mode toggle
+  // PUBLIC_INTERFACE
   const togglePrintMode = () => setPrintMode(v => !v);
+
+  // Close print mode with Escape key
+  useEffect(() => {
+    if (!printMode) return;
+    const handleEsc = (e) => {
+      if (e.key === 'Escape') setPrintMode(false);
+    };
+    window.addEventListener('keydown', handleEsc);
+    return () => window.removeEventListener('keydown', handleEsc);
+  }, [printMode]);
 
   // Pomodoro timer durations
   const FOCUS_LENGTH = 25 * 60;
