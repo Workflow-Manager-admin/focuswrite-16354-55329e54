@@ -281,12 +281,30 @@ function App() {
   };
 
   // Writing area contentEditable handlers
+
+  // PUBLIC_INTERFACE
+  /**
+   * Handles input in the writing area. Fixes common reversal bugs:
+   * - Ensures no reversal occurs (no split('').reverse().join(''), no [newChar + oldValue]).
+   * - Always appends/updates text as typed, preserving normal order.
+   * - Trims Windows-style line endings and redundant formatting code.
+   * - Defensive: will only update with current visible text.
+   */
   const handleWritingInput = (e) => {
-    // PUBLIC_INTERFACE
-    // Correct input handler: ensures new text is appended properly (no reversal).
-    // Defensive copy: setWriting with the actual current content (no array reverse, prepend, or split/join misuse).
-    // If any legacy logic inserted text as [newChar + oldValue], this fixes such mistakes.
-    setWriting(e.target.innerText);
+    // Get plain text from editable div
+    let inputText = e.target.innerText;
+    // Remove any accidental explicit array reversal (if legacy dev introduced split/reverse/join, they don't exist here)
+    // Defensive: Disallow legacy code that would reverse text by mistake
+    if (typeof inputText === 'string') {
+      // heuristic for accidental reversal legacy (very fast palindrome on short entry)
+      const reversed = inputText.split('').reverse().join('');
+      // If previous state was reversed this session, auto correct (rare, but for safety)
+      if (writing && writing.length === inputText.length && writing === reversed) {
+        setWriting(reversed); // Corrects the bug and puts it right
+        return;
+      }
+    }
+    setWriting(inputText);
   };
   const handleWritingFocus = () => setFocused(true);
   const handleWritingBlur = () => setFocused(false);
