@@ -425,6 +425,17 @@ function App() {
     // eslint-disable-next-line
   }, []);
 
+  // --- Controlled contentEditable effect for writing area sync ---
+  useEffect(() => {
+    // Keep contentEditable writing area DOM in sync with state unless editing directly.
+    if (writingRef.current && document.activeElement !== writingRef.current) {
+      if (writingRef.current.innerText !== writing) {
+        writingRef.current.innerText = writing;
+      }
+    }
+    // If the user is focused, let them type undisturbed; let onInput drive state.
+  }, [writing]);
+
   // Print mode: show only the writing area in fullscreen, hide all controls/sidebars/toolbars
   if (printMode) {
     return (
