@@ -1,6 +1,6 @@
 {
   "short_name": "FocusWrite",
-  "name": "FocusWrite - Minimalist Writing App",
+  "name": "FocusWrite – Minimalist Writing",
   "icons": [
     {
       "src": "favicon.ico",
@@ -10,6 +10,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#2E3440",
-  "background_color": "#F5F6FA"
+  "theme_color": "#A3BE8C",
+  "background_color": "#232634"
 }
