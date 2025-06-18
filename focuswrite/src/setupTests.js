@@ -3,3 +3,8 @@
 // expect(element).toHaveTextContent(/react/i)
 // learn more: https://github.com/testing-library/jest-dom
 import '@testing-library/jest-dom';
+
+// PUBLIC_INTERFACE
+/**
+ * Ensures Jest works with ES modules and doesn't break if Jest config changes.
+ */
