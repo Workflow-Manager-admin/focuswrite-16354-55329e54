@@ -2,7 +2,7 @@
   "name": "serenitywrite",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://kavia-main.d1ob7hvzse35th.amplifyapp.com/focuswrite-16354-55329e54/",
+  "homepage": "https://focuswrite.yourdomain.com/",
   "dependencies": {
     "howler": "^2.2.4",
     "react": "^18.2.0",

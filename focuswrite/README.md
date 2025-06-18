@@ -97,7 +97,63 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/a
 
 ### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+#### Deploying with a Custom Domain
+
+To prepare for deployment on your own custom domain, the `homepage` field in `package.json` has been set as:
+```
+"homepage": "https://focuswrite.yourdomain.com/"
+```
+Replace `focuswrite.yourdomain.com` with your actual custom domain as configured by your host.
+
+Below are outlines for three popular static hosting platforms:
+
+---
+
+#### **Netlify**
+
+1. **Connect your repo or drag and drop the build folder (`focuswrite/build`) in the Netlify dashboard.**
+2. **Set build command:** `npm run build`
+3. **Set publish directory:** `build`
+4. In Site settings > Domain management, add your custom domain and follow Netlify's DNS instructions.
+5. Deploy – Netlify handles most redirects and client-side routing out of the box for React apps.
+
+**Tip:** To support clean URLs, you can add a `_redirects` file in the `public/` folder with:
+```
+/*    /index.html   200
+```
+
+---
+
+#### **Vercel**
+
+1. **Install Vercel CLI or use the dashboard. Connect your GitHub repo.**
+2. **Set output directory:** `build` (for create-react-app).
+3. Add your custom domain to the project under Domain settings, and follow DNS instructions displayed by Vercel.
+4. Deploy – Vercel automatically handles client-side routes and SPA fallback.
+
+---
+
+#### **GitHub Pages**
+
+1. `"homepage"` in `package.json` should be your custom domain (as shown above).
+2. Use the provided scripts:
+    - `npm run build`
+    - `npm run deploy` (uses `gh-pages` to publish the `build` folder)
+3. On GitHub repo settings, set the custom domain in the Pages section to match your desired domain, and update DNS at your domain registrar.
+4. For correct routing, ensure you use `<BrowserRouter basename={process.env.PUBLIC_URL}>` in your `src/index.js` (already handled).
+
+**IMPORTANT:**  
+- After updating DNS records, propagation may take time (anywhere from a few minutes to 24 hours).
+- All static assets required (e.g., `public/soundscapes/*.mp3`) must be present and pushed to your repo to be included in the deployed build.
+
+---
+
+For further detail on each platform's custom domain setup, consult their official docs:
+
+- [Netlify Custom Domains](https://docs.netlify.com/domains-https/custom-domains/)
+- [Vercel Custom Domains](https://vercel.com/docs/concepts/projects/custom-domains)
+- [GitHub Pages Custom Domains](https://docs.github.com/pages/configuring-a-custom-domain-for-your-github-pages-site)
+
 
 ### `npm run build` fails to minify
 
